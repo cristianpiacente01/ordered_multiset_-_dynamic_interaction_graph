@@ -1,0 +1,778 @@
+[Test #0] Inizio unit test per il tipo std::string
+
+[Test #1] Test 1: ordine lessicografico crescente, case sensitive
+
+[Test #1] 	Metodi fondamentali
+[Test #1] 	Inizio costruttore di default
+[Test #1] 		Controllo della size uguale a 0... Risultato: 0 OK!
+[Test #1] 		Controllo che non sia contenuto nemmeno l'elemento ... Risultato: true OK!
+[Test #1] 		Controllo l'operator== con un altro multiset vuoto dello stesso tipo... Risultato: true OK!
+[Test #1] 		Stampo il contenuto vuoto... Risultato: {} OK!
+[Test #1] 	Fine costruttore di default
+
+[Test #1] 	Inizio distruttore
+[Test #1] 		Creazione oggetto allocato sullo heap e puntatore... OK!
+[Test #1] 		Eseguo una delete... OK!
+[Test #1] 	Fine distruttore
+
+[Test #1] 	Inizio copy constructor
+[Test #1] 		Inizialmente aggiungo qualche elemento al primo multiset creato col ctor di default:
+[Test #1] 			Aggiungo l'elemento ciao... OK!
+[Test #1] 			Aggiungo l'elemento aaa... OK!
+[Test #1] 			Aggiungo l'elemento AAA... OK!
+[Test #1] 			Aggiungo l'elemento aaa... OK!
+[Test #1] 			Aggiungo l'elemento aaab... OK!
+[Test #1] 			Aggiungo l'elemento b... OK!
+[Test #1] 			Aggiungo l'elemento ba... OK!
+[Test #1] 			Aggiungo l'elemento c... OK!
+[Test #1] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #1] 		Stampo il nuovo contenuto del multiset... Risultato: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <b, 1>, <ba, 1>, <c, 1>, <ciao, 1>} OK!
+[Test #1] 		Ora creo una copia indipendente dei dati utilizzando il cctor... OK!
+[Test #1] 		Stampo il multiset appena creato... Risultato: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <b, 1>, <ba, 1>, <c, 1>, <ciao, 1>} OK!
+[Test #1] 		Controllo con l'operator== i due multiset... Risultato: true OK!
+[Test #1] 		Chiamo la clear sul primo multiset e poi lo stampo... Risultato: {} OK!
+[Test #1] 		Stampo il secondo multiset verificando l'indipendenza dei dati... Risultato: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <b, 1>, <ba, 1>, <c, 1>, <ciao, 1>} OK!
+[Test #1] 	Fine copy constructor
+
+[Test #1] 	Inizio operatore di assegnamento
+[Test #1] 		Utilizzo l'operator= per assegnare al primo multiset un multiset vuoto creato al volo... OK!
+[Test #1] 		Utilizzo l'operator= per assegnare al primo multiset i dati del secondo... OK!
+[Test #1] 		Utilizzo l'operator= per assegnare al primo multiset se' stesso (auto-assegnamento)... OK!
+[Test #1] 		Stampo il primo multiset... Risultato: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <b, 1>, <ba, 1>, <c, 1>, <ciao, 1>} OK!
+[Test #1] 		Rimuovo l'unica occorrenza dell'elemento b dal secondo multiset per poi verificare l'indipendenza... OK!
+[Test #1] 		Stampo il primo multiset... Risultato: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <b, 1>, <ba, 1>, <c, 1>, <ciao, 1>} OK!
+[Test #1] 		Stampo il secondo multiset... Risultato: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <ba, 1>, <c, 1>, <ciao, 1>} OK!
+[Test #1] 		Rimuovo un'occorrenza dell'elemento aaa dal primo multiset per poi verificare l'indipendenza... OK!
+[Test #1] 		Stampo il primo multiset... Risultato: {<AAA, 1>, <aaa, 1>, <aaab, 1>, <b, 1>, <ba, 1>, <c, 1>, <ciao, 1>} OK!
+[Test #1] 		Stampo il secondo multiset... Risultato: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <ba, 1>, <c, 1>, <ciao, 1>} OK!
+[Test #1] 	Fine operatore di assegnamento
+[Test #1] 	Fine metodi fondamentali
+
+[Test #1] 	Inizio test interfaccia pubblica
+[Test #1] 	Inizio costruttore che prende una coppia di iteratori
+[Test #1] 		Gli elementi che saranno aggiunti sono ciao AAA aaab ba 
+[Test #1] 		Creazione multiset usando due iteratori... Risultato: {<AAA, 1>, <aaab, 1>, <ba, 1>, <ciao, 1>} OK!
+[Test #1] 		Creazione multiset usando due iteratori uguali, quindi che risultera' vuoto... Risultato: {} OK!
+[Test #1] 	Fine costruttore che prende una coppia di iteratori
+
+[Test #1] 	Inizio metodo clear
+[Test #1] 		Utilizzo la clear su un multiset non vuoto, ossia quello costruito con due iteratori
+[Test #1] 		Prima della clear: {<AAA, 1>, <aaab, 1>, <ba, 1>, <ciao, 1>}
+[Test #1] 		Dopo la clear: {} OK!
+[Test #1] 		Utilizzo la clear su un multiset vuoto, ossia quello costruito con due iteratori uguali
+[Test #1] 		Prima della clear: {}
+[Test #1] 		Dopo la clear: {} OK!
+[Test #1] 	Fine metodo clear
+
+[Test #1] 	Inizio metodo swap
+[Test #1] 		Riutilizzo due multiset creati in precedenza qui sotto stampati:
+[Test #1] 		Primo multiset: {<AAA, 1>, <aaa, 1>, <aaab, 1>, <b, 1>, <ba, 1>, <c, 1>, <ciao, 1>}
+[Test #1] 		Secondo multiset: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <ba, 1>, <c, 1>, <ciao, 1>}
+[Test #1] 		Chiamo la swap... OK!
+[Test #1] 		Controllo che i due contenuti siano stati scambiati... OK!
+[Test #1] 		Stampo i due multiset dopo la swap qui sotto:
+[Test #1] 		Primo multiset: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <ba, 1>, <c, 1>, <ciao, 1>}
+[Test #1] 		Secondo multiset: {<AAA, 1>, <aaa, 1>, <aaab, 1>, <b, 1>, <ba, 1>, <c, 1>, <ciao, 1>}
+[Test #1] 		Ora scambio il primo multiset con un multiset vuoto creato in precedenza... OK!
+[Test #1] 		Stampo qui sotto i due multiset:
+[Test #1] 		Multiset che era vuoto: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <ba, 1>, <c, 1>, <ciao, 1>}
+[Test #1] 		Multiset che era riempito: {}
+[Test #1] 		Li riporto allo stato originale con un'altra swap... OK!
+[Test #1] 		Multiset di nuovo vuoto: {}
+[Test #1] 		Multiset di nuovo riempito: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <ba, 1>, <c, 1>, <ciao, 1>}
+[Test #1] 		Infine scambio due multiset vuoti tra di loro e li stampo... {} {} OK!
+[Test #1] 	Fine metodo swap
+
+[Test #1] 	Inizio metodo size
+[Test #1] 		Chiamo la size su un multiset vuoto, mi aspetto 0... Risultato: 0 OK!
+[Test #1] 		Chiamo la size sul multiset utilizzato in precedenza che stampo qui sotto:
+[Test #1] 		Multiset: {<AAA, 1>, <aaa, 2>, <aaab, 1>, <ba, 1>, <c, 1>, <ciao, 1>}
+[Test #1] 		Mi aspetto 7... Risultato: 7 OK!
+[Test #1] 		Aggiungo l'elemento aaaa e verifico che la size venga incrementata, mi aspetto 8... Risultato: 8 OK!
+[Test #1] 		Rimuovo l'elemento appena aggiunto e verifico che la size venga decrementata, mi aspetto 7... Risultato: 7 OK!
+[Test #1] 	Fine metodo size
+
+[Test #1] 	Inizio metodo add
+[Test #1] 		Utilizzo un multiset vuoto: {}
+[Test #1] 		Aggiungo 42 volte l'elemento ... OK!
+[Test #1] 		Verifico la correttezza del contenuto, mi aspetto {<, 42>}... Risultato: {<, 42>} OK!
+[Test #1] 		Aggiungo altri elementi:
+[Test #1] 			Aggiungo l'elemento aaa... OK!
+[Test #1] 			Aggiungo l'elemento aaa... OK!
+[Test #1] 			Aggiungo l'elemento b... OK!
+[Test #1] 			Aggiungo l'elemento c... OK!
+[Test #1] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #1] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #1] 		{<, 42>, <aaa, 2>, <b, 1>, <c, 1>} OK!
+[Test #1] 	Fine metodo add
+
+[Test #1] 	Inizio metodo remove
+[Test #1] 		Utilizzo lo stesso multiset di prima, rimuovo 41 occorrenze di ... OK!
+[Test #1] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #1] 		{<, 1>, <aaa, 2>, <b, 1>, <c, 1>} OK!
+[Test #1] 		Verifico che ci sia una sola occorrenza di ... Risultato: true OK!
+[Test #1] 		Elimino l'ultima occorrenza di ... OK!
+[Test #1] 		Stampo il nuovo contenuto qui sotto:
+[Test #1] 		{<aaa, 2>, <b, 1>, <c, 1>} OK!
+[Test #1] 		(Mi aspetto l'eccezione custom) Provo ad eliminare l'elemento aaaa non presente:
+[Test #1] 		Eccezione custom catturata: Impossibile rimuovere un elemento non presente nel multiset ordinato.
+[Test #1] 	Fine metodo remove
+
+[Test #1] 	Inizio metodo multiplicity
+[Test #1] 		Uso l'ultimo multiset utilizzato, controllo che per ogni elemento il metodo multiplicity restituisca il numero di occorrenze corretto:
+[Test #1] 			Molteplicita' dell'elemento aaa aspettata 2, ho 2 OK!
+[Test #1] 			Molteplicita' dell'elemento b aspettata 1, ho 1 OK!
+[Test #1] 			Molteplicita' dell'elemento c aspettata 1, ho 1 OK!
+[Test #1] 		Molteplicita' dell'elemento  non presente... Risultato: 0 OK!
+[Test #1] 	Fine metodo multiplicity
+
+[Test #1] 	Inizio operator==
+[Test #1] 		A partire dall'ultimo multiset utilizzato creo un altro multiset ma con policy di ordinamento diversa:
+[Test #1] 			Stampo il multiset che vado ad utilizzare:
+[Test #1] 			{<aaa, 2>, <b, 1>, <c, 1>} OK!
+[Test #1] 			Creo un nuovo multiset con ordinamento diverso, utilizzando il costruttore che prende due iteratori... OK!
+[Test #1] 		Nuovo multiset con ordinamento diverso creato, lo stampo qui sotto:
+[Test #1] 		{<c, 1>, <b, 1>, <aaa, 2>}
+[Test #1] 		Utilizzo l'operator== tra i due multiset ordinati in modo diverso... Risultato: true OK!
+[Test #1] 		Aggiungo l'elemento  al nuovo multiset e verifico che siano diversi... OK!
+[Test #1] 		Stampo il nuovo multiset qui sotto:
+[Test #1] 		{<c, 1>, <b, 1>, <aaa, 2>, <, 1>}
+[Test #1] 		Svuoto quest'ultimo con la clear... OK!
+[Test #1] 		Stampo il multiset... Risultato: {} OK!
+[Test #1] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento uguale... Risultato: true OK!
+[Test #1] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento diverso... Risultato: true OK!
+[Test #1] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento uguale... Risultato: true OK!
+[Test #1] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento diverso... Risultato: true OK!
+[Test #1] 	Fine operator==
+
+[Test #1] 	Inizio metodo contains
+[Test #1] 		Creo un nuovo multiset con i seguenti valori: OOOo OOOO a aa Ab ab zzzz 
+[Test #1] 		Stampo il nuovo contenuto qui sotto:
+[Test #1] 		{<Ab, 1>, <OOOO, 1>, <OOOo, 1>, <a, 1>, <aa, 1>, <ab, 1>, <zzzz, 1>} OK!
+[Test #1] 		Controllo che la contains dia true per ogni elemento distinto del multiset:
+[Test #1] 			Contains dell'elemento Ab... Risultato: true OK!
+[Test #1] 			Contains dell'elemento OOOO... Risultato: true OK!
+[Test #1] 			Contains dell'elemento OOOo... Risultato: true OK!
+[Test #1] 			Contains dell'elemento a... Risultato: true OK!
+[Test #1] 			Contains dell'elemento aa... Risultato: true OK!
+[Test #1] 			Contains dell'elemento ab... Risultato: true OK!
+[Test #1] 			Contains dell'elemento zzzz... Risultato: true OK!
+[Test #1] 		Controllo che la contains dia false per un elemento non contenuto:
+[Test #1] 			Contains dell'elemento aaaa... Risultato: false OK!
+[Test #1] 	Fine metodo contains
+
+[Test #1] 	Inizio stampa con iteratori
+[Test #1] 		Uso l'ultimo multiset utilizzato, stampo gli elementi in ordine del multiset ordinato tramite gli iteratori:
+[Test #1] 		Ab OOOO OOOo a aa ab zzzz  OK!
+[Test #1] 		Ora di nuovo ma stampo partendo dalla fine, per utilizzare il decremento nell'iteratore bidirectional:
+[Test #1] 		zzzz ab aa a OOOo OOOO Ab  OK!
+[Test #1] 		Controllo che gli elementi restituiti dall'iteratore costituiscono una permutazione degli elementi inseriti in precedenza... Risultato: true OK!
+[Test #1] 		Stampo con gli iteratori un multiset vuoto:
+[Test #1] 		 OK!
+[Test #1] 	Fine stampa con iteratori
+
+[Test #1] 	Fine interfaccia pubblica
+
+[Test #1] 	Inizio const correctness
+[Test #1] 	Metodi utilizzabili (da parte dell'utente o meno, come il distruttore) su un ordered_multiset costante:
+[Test #1] 		Ctor di default... OK!
+[Test #1] 		Costruttore che prende una coppia di iteratori... OK!
+[Test #1] 		Distruttore... OK!
+[Test #1] 		Copy constructor... OK!
+[Test #1] 		Size... OK!
+[Test #1] 		Multiplicity... OK!
+[Test #1] 		Operatore di uguaglianza operator==... OK!
+[Test #1] 		Contains... OK!
+[Test #1] 		Begin... OK!
+[Test #1] 		End... OK!
+[Test #1] 		Operatore di stream operator<<... {<Ab, 1>, <OOOO, 1>, <OOOo, 1>, <a, 1>, <aa, 1>, <ab, 1>, <zzzz, 1>} OK!
+[Test #1] 	Fine metodi utilizzabili per multiset costanti
+
+[Test #1] 	I metodi non utilizzabili dell'interfaccia pubblica per multiset costanti sono:
+[Test #1] 	operator=, clear, swap, add, remove.
+[Test #1] 	Fine const correctness
+
+[Test #1] Fine test 1
+
+[Test #2] Test 2: ordine lessicografico decrescente, case sensitive
+
+[Test #2] 	Metodi fondamentali
+[Test #2] 	Inizio costruttore di default
+[Test #2] 		Controllo della size uguale a 0... Risultato: 0 OK!
+[Test #2] 		Controllo che non sia contenuto nemmeno l'elemento ... Risultato: true OK!
+[Test #2] 		Controllo l'operator== con un altro multiset vuoto dello stesso tipo... Risultato: true OK!
+[Test #2] 		Stampo il contenuto vuoto... Risultato: {} OK!
+[Test #2] 	Fine costruttore di default
+
+[Test #2] 	Inizio distruttore
+[Test #2] 		Creazione oggetto allocato sullo heap e puntatore... OK!
+[Test #2] 		Eseguo una delete... OK!
+[Test #2] 	Fine distruttore
+
+[Test #2] 	Inizio copy constructor
+[Test #2] 		Inizialmente aggiungo qualche elemento al primo multiset creato col ctor di default:
+[Test #2] 			Aggiungo l'elemento bbb... OK!
+[Test #2] 			Aggiungo l'elemento cccciao... OK!
+[Test #2] 			Aggiungo l'elemento ciao... OK!
+[Test #2] 			Aggiungo l'elemento cia... OK!
+[Test #2] 			Aggiungo l'elemento a... OK!
+[Test #2] 			Aggiungo l'elemento zzzzz... OK!
+[Test #2] 			Aggiungo l'elemento z... OK!
+[Test #2] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #2] 		Stampo il nuovo contenuto del multiset... Risultato: {<zzzzz, 1>, <z, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>} OK!
+[Test #2] 		Ora creo una copia indipendente dei dati utilizzando il cctor... OK!
+[Test #2] 		Stampo il multiset appena creato... Risultato: {<zzzzz, 1>, <z, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>} OK!
+[Test #2] 		Controllo con l'operator== i due multiset... Risultato: true OK!
+[Test #2] 		Chiamo la clear sul primo multiset e poi lo stampo... Risultato: {} OK!
+[Test #2] 		Stampo il secondo multiset verificando l'indipendenza dei dati... Risultato: {<zzzzz, 1>, <z, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>} OK!
+[Test #2] 	Fine copy constructor
+
+[Test #2] 	Inizio operatore di assegnamento
+[Test #2] 		Utilizzo l'operator= per assegnare al primo multiset un multiset vuoto creato al volo... OK!
+[Test #2] 		Utilizzo l'operator= per assegnare al primo multiset i dati del secondo... OK!
+[Test #2] 		Utilizzo l'operator= per assegnare al primo multiset se' stesso (auto-assegnamento)... OK!
+[Test #2] 		Stampo il primo multiset... Risultato: {<zzzzz, 1>, <z, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>} OK!
+[Test #2] 		Rimuovo l'unica occorrenza dell'elemento z dal secondo multiset per poi verificare l'indipendenza... OK!
+[Test #2] 		Stampo il primo multiset... Risultato: {<zzzzz, 1>, <z, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>} OK!
+[Test #2] 		Stampo il secondo multiset... Risultato: {<zzzzz, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>} OK!
+[Test #2] 		Rimuovo un'occorrenza dell'elemento ciao dal primo multiset per poi verificare l'indipendenza... OK!
+[Test #2] 		Stampo il primo multiset... Risultato: {<zzzzz, 1>, <z, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>} OK!
+[Test #2] 		Stampo il secondo multiset... Risultato: {<zzzzz, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>} OK!
+[Test #2] 	Fine operatore di assegnamento
+[Test #2] 	Fine metodi fondamentali
+
+[Test #2] 	Inizio test interfaccia pubblica
+[Test #2] 	Inizio costruttore che prende una coppia di iteratori
+[Test #2] 		Gli elementi che saranno aggiunti sono bbb ciao a z 
+[Test #2] 		Creazione multiset usando due iteratori... Risultato: {<z, 1>, <ciao, 1>, <bbb, 1>, <a, 1>} OK!
+[Test #2] 		Creazione multiset usando due iteratori uguali, quindi che risultera' vuoto... Risultato: {} OK!
+[Test #2] 	Fine costruttore che prende una coppia di iteratori
+
+[Test #2] 	Inizio metodo clear
+[Test #2] 		Utilizzo la clear su un multiset non vuoto, ossia quello costruito con due iteratori
+[Test #2] 		Prima della clear: {<z, 1>, <ciao, 1>, <bbb, 1>, <a, 1>}
+[Test #2] 		Dopo la clear: {} OK!
+[Test #2] 		Utilizzo la clear su un multiset vuoto, ossia quello costruito con due iteratori uguali
+[Test #2] 		Prima della clear: {}
+[Test #2] 		Dopo la clear: {} OK!
+[Test #2] 	Fine metodo clear
+
+[Test #2] 	Inizio metodo swap
+[Test #2] 		Riutilizzo due multiset creati in precedenza qui sotto stampati:
+[Test #2] 		Primo multiset: {<zzzzz, 1>, <z, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>}
+[Test #2] 		Secondo multiset: {<zzzzz, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>}
+[Test #2] 		Chiamo la swap... OK!
+[Test #2] 		Controllo che i due contenuti siano stati scambiati... OK!
+[Test #2] 		Stampo i due multiset dopo la swap qui sotto:
+[Test #2] 		Primo multiset: {<zzzzz, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>}
+[Test #2] 		Secondo multiset: {<zzzzz, 1>, <z, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>}
+[Test #2] 		Ora scambio il primo multiset con un multiset vuoto creato in precedenza... OK!
+[Test #2] 		Stampo qui sotto i due multiset:
+[Test #2] 		Multiset che era vuoto: {<zzzzz, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>}
+[Test #2] 		Multiset che era riempito: {}
+[Test #2] 		Li riporto allo stato originale con un'altra swap... OK!
+[Test #2] 		Multiset di nuovo vuoto: {}
+[Test #2] 		Multiset di nuovo riempito: {<zzzzz, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>}
+[Test #2] 		Infine scambio due multiset vuoti tra di loro e li stampo... {} {} OK!
+[Test #2] 	Fine metodo swap
+
+[Test #2] 	Inizio metodo size
+[Test #2] 		Chiamo la size su un multiset vuoto, mi aspetto 0... Risultato: 0 OK!
+[Test #2] 		Chiamo la size sul multiset utilizzato in precedenza che stampo qui sotto:
+[Test #2] 		Multiset: {<zzzzz, 1>, <ciao, 1>, <cia, 1>, <cccciao, 1>, <bbb, 1>, <a, 1>}
+[Test #2] 		Mi aspetto 6... Risultato: 6 OK!
+[Test #2] 		Aggiungo l'elemento zz e verifico che la size venga incrementata, mi aspetto 7... Risultato: 7 OK!
+[Test #2] 		Rimuovo l'elemento appena aggiunto e verifico che la size venga decrementata, mi aspetto 6... Risultato: 6 OK!
+[Test #2] 	Fine metodo size
+
+[Test #2] 	Inizio metodo add
+[Test #2] 		Utilizzo un multiset vuoto: {}
+[Test #2] 		Aggiungo 2 volte l'elemento ... OK!
+[Test #2] 		Verifico la correttezza del contenuto, mi aspetto {<, 2>}... Risultato: {<, 2>} OK!
+[Test #2] 		Aggiungo altri elementi:
+[Test #2] 			Aggiungo l'elemento cccciao... OK!
+[Test #2] 			Aggiungo l'elemento cia... OK!
+[Test #2] 			Aggiungo l'elemento zzzzz... OK!
+[Test #2] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #2] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #2] 		{<zzzzz, 1>, <cia, 1>, <cccciao, 1>, <, 2>} OK!
+[Test #2] 	Fine metodo add
+
+[Test #2] 	Inizio metodo remove
+[Test #2] 		Utilizzo lo stesso multiset di prima, rimuovo 1 occorrenze di ... OK!
+[Test #2] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #2] 		{<zzzzz, 1>, <cia, 1>, <cccciao, 1>, <, 1>} OK!
+[Test #2] 		Verifico che ci sia una sola occorrenza di ... Risultato: true OK!
+[Test #2] 		Elimino l'ultima occorrenza di ... OK!
+[Test #2] 		Stampo il nuovo contenuto qui sotto:
+[Test #2] 		{<zzzzz, 1>, <cia, 1>, <cccciao, 1>} OK!
+[Test #2] 		(Mi aspetto l'eccezione custom) Provo ad eliminare l'elemento zz non presente:
+[Test #2] 		Eccezione custom catturata: Impossibile rimuovere un elemento non presente nel multiset ordinato.
+[Test #2] 	Fine metodo remove
+
+[Test #2] 	Inizio metodo multiplicity
+[Test #2] 		Uso l'ultimo multiset utilizzato, controllo che per ogni elemento il metodo multiplicity restituisca il numero di occorrenze corretto:
+[Test #2] 			Molteplicita' dell'elemento zzzzz aspettata 1, ho 1 OK!
+[Test #2] 			Molteplicita' dell'elemento cia aspettata 1, ho 1 OK!
+[Test #2] 			Molteplicita' dell'elemento cccciao aspettata 1, ho 1 OK!
+[Test #2] 		Molteplicita' dell'elemento  non presente... Risultato: 0 OK!
+[Test #2] 	Fine metodo multiplicity
+
+[Test #2] 	Inizio operator==
+[Test #2] 		A partire dall'ultimo multiset utilizzato creo un altro multiset ma con policy di ordinamento diversa:
+[Test #2] 			Stampo il multiset che vado ad utilizzare:
+[Test #2] 			{<zzzzz, 1>, <cia, 1>, <cccciao, 1>} OK!
+[Test #2] 			Creo un nuovo multiset con ordinamento diverso, utilizzando il costruttore che prende due iteratori... OK!
+[Test #2] 		Nuovo multiset con ordinamento diverso creato, lo stampo qui sotto:
+[Test #2] 		{<cccciao, 1>, <cia, 1>, <zzzzz, 1>}
+[Test #2] 		Utilizzo l'operator== tra i due multiset ordinati in modo diverso... Risultato: true OK!
+[Test #2] 		Aggiungo l'elemento  al nuovo multiset e verifico che siano diversi... OK!
+[Test #2] 		Stampo il nuovo multiset qui sotto:
+[Test #2] 		{<, 1>, <cccciao, 1>, <cia, 1>, <zzzzz, 1>}
+[Test #2] 		Svuoto quest'ultimo con la clear... OK!
+[Test #2] 		Stampo il multiset... Risultato: {} OK!
+[Test #2] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento uguale... Risultato: true OK!
+[Test #2] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento diverso... Risultato: true OK!
+[Test #2] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento uguale... Risultato: true OK!
+[Test #2] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento diverso... Risultato: true OK!
+[Test #2] 	Fine operator==
+
+[Test #2] 	Inizio metodo contains
+[Test #2] 		Creo un nuovo multiset con i seguenti valori: 1 2 A AA Ac AAe AAz Z @ # 
+[Test #2] 		Stampo il nuovo contenuto qui sotto:
+[Test #2] 		{<Z, 1>, <Ac, 1>, <AAz, 1>, <AAe, 1>, <AA, 1>, <A, 1>, <@, 1>, <2, 1>, <1, 1>, <#, 1>} OK!
+[Test #2] 		Controllo che la contains dia true per ogni elemento distinto del multiset:
+[Test #2] 			Contains dell'elemento Z... Risultato: true OK!
+[Test #2] 			Contains dell'elemento Ac... Risultato: true OK!
+[Test #2] 			Contains dell'elemento AAz... Risultato: true OK!
+[Test #2] 			Contains dell'elemento AAe... Risultato: true OK!
+[Test #2] 			Contains dell'elemento AA... Risultato: true OK!
+[Test #2] 			Contains dell'elemento A... Risultato: true OK!
+[Test #2] 			Contains dell'elemento @... Risultato: true OK!
+[Test #2] 			Contains dell'elemento 2... Risultato: true OK!
+[Test #2] 			Contains dell'elemento 1... Risultato: true OK!
+[Test #2] 			Contains dell'elemento #... Risultato: true OK!
+[Test #2] 		Controllo che la contains dia false per un elemento non contenuto:
+[Test #2] 			Contains dell'elemento zz... Risultato: false OK!
+[Test #2] 	Fine metodo contains
+
+[Test #2] 	Inizio stampa con iteratori
+[Test #2] 		Uso l'ultimo multiset utilizzato, stampo gli elementi in ordine del multiset ordinato tramite gli iteratori:
+[Test #2] 		Z Ac AAz AAe AA A @ 2 1 #  OK!
+[Test #2] 		Ora di nuovo ma stampo partendo dalla fine, per utilizzare il decremento nell'iteratore bidirectional:
+[Test #2] 		# 1 2 @ A AA AAe AAz Ac Z  OK!
+[Test #2] 		Controllo che gli elementi restituiti dall'iteratore costituiscono una permutazione degli elementi inseriti in precedenza... Risultato: true OK!
+[Test #2] 		Stampo con gli iteratori un multiset vuoto:
+[Test #2] 		 OK!
+[Test #2] 	Fine stampa con iteratori
+
+[Test #2] 	Fine interfaccia pubblica
+
+[Test #2] 	Inizio const correctness
+[Test #2] 	Metodi utilizzabili (da parte dell'utente o meno, come il distruttore) su un ordered_multiset costante:
+[Test #2] 		Ctor di default... OK!
+[Test #2] 		Costruttore che prende una coppia di iteratori... OK!
+[Test #2] 		Distruttore... OK!
+[Test #2] 		Copy constructor... OK!
+[Test #2] 		Size... OK!
+[Test #2] 		Multiplicity... OK!
+[Test #2] 		Operatore di uguaglianza operator==... OK!
+[Test #2] 		Contains... OK!
+[Test #2] 		Begin... OK!
+[Test #2] 		End... OK!
+[Test #2] 		Operatore di stream operator<<... {<Z, 1>, <Ac, 1>, <AAz, 1>, <AAe, 1>, <AA, 1>, <A, 1>, <@, 1>, <2, 1>, <1, 1>, <#, 1>} OK!
+[Test #2] 	Fine metodi utilizzabili per multiset costanti
+
+[Test #2] 	I metodi non utilizzabili dell'interfaccia pubblica per multiset costanti sono:
+[Test #2] 	operator=, clear, swap, add, remove.
+[Test #2] 	Fine const correctness
+
+[Test #2] Fine test 2
+
+[Test #3] Test 3: ordine lessicografico crescente, case insensitive
+
+[Test #3] 	Metodi fondamentali
+[Test #3] 	Inizio costruttore di default
+[Test #3] 		Controllo della size uguale a 0... Risultato: 0 OK!
+[Test #3] 		Controllo che non sia contenuto nemmeno l'elemento ... Risultato: true OK!
+[Test #3] 		Controllo l'operator== con un altro multiset vuoto dello stesso tipo... Risultato: true OK!
+[Test #3] 		Stampo il contenuto vuoto... Risultato: {} OK!
+[Test #3] 	Fine costruttore di default
+
+[Test #3] 	Inizio distruttore
+[Test #3] 		Creazione oggetto allocato sullo heap e puntatore... OK!
+[Test #3] 		Eseguo una delete... OK!
+[Test #3] 	Fine distruttore
+
+[Test #3] 	Inizio copy constructor
+[Test #3] 		Inizialmente aggiungo qualche elemento al primo multiset creato col ctor di default:
+[Test #3] 			Aggiungo l'elemento aaa... OK!
+[Test #3] 			Aggiungo l'elemento aba... OK!
+[Test #3] 			Aggiungo l'elemento abb... OK!
+[Test #3] 			Aggiungo l'elemento abba... OK!
+[Test #3] 			Aggiungo l'elemento AbA... OK!
+[Test #3] 			Aggiungo l'elemento ABA... OK!
+[Test #3] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #3] 		Stampo il nuovo contenuto del multiset... Risultato: {<aaa, 1>, <aba, 3>, <abb, 1>, <abba, 1>} OK!
+[Test #3] 		Ora creo una copia indipendente dei dati utilizzando il cctor... OK!
+[Test #3] 		Stampo il multiset appena creato... Risultato: {<aaa, 1>, <aba, 3>, <abb, 1>, <abba, 1>} OK!
+[Test #3] 		Controllo con l'operator== i due multiset... Risultato: true OK!
+[Test #3] 		Chiamo la clear sul primo multiset e poi lo stampo... Risultato: {} OK!
+[Test #3] 		Stampo il secondo multiset verificando l'indipendenza dei dati... Risultato: {<aaa, 1>, <aba, 3>, <abb, 1>, <abba, 1>} OK!
+[Test #3] 	Fine copy constructor
+
+[Test #3] 	Inizio operatore di assegnamento
+[Test #3] 		Utilizzo l'operator= per assegnare al primo multiset un multiset vuoto creato al volo... OK!
+[Test #3] 		Utilizzo l'operator= per assegnare al primo multiset i dati del secondo... OK!
+[Test #3] 		Utilizzo l'operator= per assegnare al primo multiset se' stesso (auto-assegnamento)... OK!
+[Test #3] 		Stampo il primo multiset... Risultato: {<aaa, 1>, <aba, 3>, <abb, 1>, <abba, 1>} OK!
+[Test #3] 		Rimuovo l'unica occorrenza dell'elemento AAA dal secondo multiset per poi verificare l'indipendenza... OK!
+[Test #3] 		Stampo il primo multiset... Risultato: {<aaa, 1>, <aba, 3>, <abb, 1>, <abba, 1>} OK!
+[Test #3] 		Stampo il secondo multiset... Risultato: {<aba, 3>, <abb, 1>, <abba, 1>} OK!
+[Test #3] 		Rimuovo un'occorrenza dell'elemento aBA dal primo multiset per poi verificare l'indipendenza... OK!
+[Test #3] 		Stampo il primo multiset... Risultato: {<aaa, 1>, <aba, 2>, <abb, 1>, <abba, 1>} OK!
+[Test #3] 		Stampo il secondo multiset... Risultato: {<aba, 3>, <abb, 1>, <abba, 1>} OK!
+[Test #3] 	Fine operatore di assegnamento
+[Test #3] 	Fine metodi fondamentali
+
+[Test #3] 	Inizio test interfaccia pubblica
+[Test #3] 	Inizio costruttore che prende una coppia di iteratori
+[Test #3] 		Gli elementi che saranno aggiunti sono aaa abb AbA 
+[Test #3] 		Creazione multiset usando due iteratori... Risultato: {<AbA, 1>, <aaa, 1>, <abb, 1>} OK!
+[Test #3] 		Creazione multiset usando due iteratori uguali, quindi che risultera' vuoto... Risultato: {} OK!
+[Test #3] 	Fine costruttore che prende una coppia di iteratori
+
+[Test #3] 	Inizio metodo clear
+[Test #3] 		Utilizzo la clear su un multiset non vuoto, ossia quello costruito con due iteratori
+[Test #3] 		Prima della clear: {<AbA, 1>, <aaa, 1>, <abb, 1>}
+[Test #3] 		Dopo la clear: {} OK!
+[Test #3] 		Utilizzo la clear su un multiset vuoto, ossia quello costruito con due iteratori uguali
+[Test #3] 		Prima della clear: {}
+[Test #3] 		Dopo la clear: {} OK!
+[Test #3] 	Fine metodo clear
+
+[Test #3] 	Inizio metodo swap
+[Test #3] 		Riutilizzo due multiset creati in precedenza qui sotto stampati:
+[Test #3] 		Primo multiset: {<aaa, 1>, <aba, 2>, <abb, 1>, <abba, 1>}
+[Test #3] 		Secondo multiset: {<aba, 3>, <abb, 1>, <abba, 1>}
+[Test #3] 		Chiamo la swap... OK!
+[Test #3] 		Controllo che i due contenuti siano stati scambiati... OK!
+[Test #3] 		Stampo i due multiset dopo la swap qui sotto:
+[Test #3] 		Primo multiset: {<aba, 3>, <abb, 1>, <abba, 1>}
+[Test #3] 		Secondo multiset: {<aaa, 1>, <aba, 2>, <abb, 1>, <abba, 1>}
+[Test #3] 		Ora scambio il primo multiset con un multiset vuoto creato in precedenza... OK!
+[Test #3] 		Stampo qui sotto i due multiset:
+[Test #3] 		Multiset che era vuoto: {<aba, 3>, <abb, 1>, <abba, 1>}
+[Test #3] 		Multiset che era riempito: {}
+[Test #3] 		Li riporto allo stato originale con un'altra swap... OK!
+[Test #3] 		Multiset di nuovo vuoto: {}
+[Test #3] 		Multiset di nuovo riempito: {<aba, 3>, <abb, 1>, <abba, 1>}
+[Test #3] 		Infine scambio due multiset vuoti tra di loro e li stampo... {} {} OK!
+[Test #3] 	Fine metodo swap
+
+[Test #3] 	Inizio metodo size
+[Test #3] 		Chiamo la size su un multiset vuoto, mi aspetto 0... Risultato: 0 OK!
+[Test #3] 		Chiamo la size sul multiset utilizzato in precedenza che stampo qui sotto:
+[Test #3] 		Multiset: {<aba, 3>, <abb, 1>, <abba, 1>}
+[Test #3] 		Mi aspetto 5... Risultato: 5 OK!
+[Test #3] 		Aggiungo l'elemento b e verifico che la size venga incrementata, mi aspetto 6... Risultato: 6 OK!
+[Test #3] 		Rimuovo l'elemento appena aggiunto e verifico che la size venga decrementata, mi aspetto 5... Risultato: 5 OK!
+[Test #3] 	Fine metodo size
+
+[Test #3] 	Inizio metodo add
+[Test #3] 		Utilizzo un multiset vuoto: {}
+[Test #3] 		Aggiungo 34 volte l'elemento ... OK!
+[Test #3] 		Verifico la correttezza del contenuto, mi aspetto {<, 34>}... Risultato: {<, 34>} OK!
+[Test #3] 		Aggiungo altri elementi:
+[Test #3] 			Aggiungo l'elemento aba... OK!
+[Test #3] 			Aggiungo l'elemento abba... OK!
+[Test #3] 			Aggiungo l'elemento ABA... OK!
+[Test #3] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #3] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #3] 		{<, 34>, <aba, 2>, <abba, 1>} OK!
+[Test #3] 	Fine metodo add
+
+[Test #3] 	Inizio metodo remove
+[Test #3] 		Utilizzo lo stesso multiset di prima, rimuovo 33 occorrenze di ... OK!
+[Test #3] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #3] 		{<, 1>, <aba, 2>, <abba, 1>} OK!
+[Test #3] 		Verifico che ci sia una sola occorrenza di ... Risultato: true OK!
+[Test #3] 		Elimino l'ultima occorrenza di ... OK!
+[Test #3] 		Stampo il nuovo contenuto qui sotto:
+[Test #3] 		{<aba, 2>, <abba, 1>} OK!
+[Test #3] 		(Mi aspetto l'eccezione custom) Provo ad eliminare l'elemento b non presente:
+[Test #3] 		Eccezione custom catturata: Impossibile rimuovere un elemento non presente nel multiset ordinato.
+[Test #3] 	Fine metodo remove
+
+[Test #3] 	Inizio metodo multiplicity
+[Test #3] 		Uso l'ultimo multiset utilizzato, controllo che per ogni elemento il metodo multiplicity restituisca il numero di occorrenze corretto:
+[Test #3] 			Molteplicita' dell'elemento aba aspettata 2, ho 2 OK!
+[Test #3] 			Molteplicita' dell'elemento abba aspettata 1, ho 1 OK!
+[Test #3] 		Molteplicita' dell'elemento  non presente... Risultato: 0 OK!
+[Test #3] 	Fine metodo multiplicity
+
+[Test #3] 	Inizio operator==
+[Test #3] 		A partire dall'ultimo multiset utilizzato creo un altro multiset ma con policy di ordinamento diversa:
+[Test #3] 			Stampo il multiset che vado ad utilizzare:
+[Test #3] 			{<aba, 2>, <abba, 1>} OK!
+[Test #3] 			Creo un nuovo multiset con ordinamento diverso, utilizzando il costruttore che prende due iteratori... OK!
+[Test #3] 		Nuovo multiset con ordinamento diverso creato, lo stampo qui sotto:
+[Test #3] 		{<abba, 1>, <aba, 2>}
+[Test #3] 		Utilizzo l'operator== tra i due multiset ordinati in modo diverso... Risultato: true OK!
+[Test #3] 		Aggiungo l'elemento  al nuovo multiset e verifico che siano diversi... OK!
+[Test #3] 		Stampo il nuovo multiset qui sotto:
+[Test #3] 		{<abba, 1>, <aba, 2>, <, 1>}
+[Test #3] 		Svuoto quest'ultimo con la clear... OK!
+[Test #3] 		Stampo il multiset... Risultato: {} OK!
+[Test #3] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento uguale... Risultato: true OK!
+[Test #3] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento diverso... Risultato: true OK!
+[Test #3] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento uguale... Risultato: true OK!
+[Test #3] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento diverso... Risultato: true OK!
+[Test #3] 	Fine operator==
+
+[Test #3] 	Inizio metodo contains
+[Test #3] 		Creo un nuovo multiset con i seguenti valori: aaaa AAAA aaAa AaaA aaaz Z a 
+[Test #3] 		Stampo il nuovo contenuto qui sotto:
+[Test #3] 		{<Z, 1>, <a, 1>, <aaaa, 4>, <aaaz, 1>} OK!
+[Test #3] 		Controllo che la contains dia true per ogni elemento distinto del multiset:
+[Test #3] 			Contains dell'elemento Z... Risultato: true OK!
+[Test #3] 			Contains dell'elemento a... Risultato: true OK!
+[Test #3] 			Contains dell'elemento aaaa... Risultato: true OK!
+[Test #3] 			Contains dell'elemento aaaz... Risultato: true OK!
+[Test #3] 		Controllo che la contains dia false per un elemento non contenuto:
+[Test #3] 			Contains dell'elemento b... Risultato: false OK!
+[Test #3] 	Fine metodo contains
+
+[Test #3] 	Inizio stampa con iteratori
+[Test #3] 		Uso l'ultimo multiset utilizzato, stampo gli elementi in ordine del multiset ordinato tramite gli iteratori:
+[Test #3] 		Z a aaaa aaaa aaaa aaaa aaaz  OK!
+[Test #3] 		Ora di nuovo ma stampo partendo dalla fine, per utilizzare il decremento nell'iteratore bidirectional:
+[Test #3] 		aaaz aaaa aaaa aaaa aaaa a Z  OK!
+[Test #3] 		Controllo che gli elementi restituiti dall'iteratore costituiscono una permutazione degli elementi inseriti in precedenza... Risultato: true OK!
+[Test #3] 		Stampo con gli iteratori un multiset vuoto:
+[Test #3] 		 OK!
+[Test #3] 	Fine stampa con iteratori
+
+[Test #3] 	Fine interfaccia pubblica
+
+[Test #3] 	Inizio const correctness
+[Test #3] 	Metodi utilizzabili (da parte dell'utente o meno, come il distruttore) su un ordered_multiset costante:
+[Test #3] 		Ctor di default... OK!
+[Test #3] 		Costruttore che prende una coppia di iteratori... OK!
+[Test #3] 		Distruttore... OK!
+[Test #3] 		Copy constructor... OK!
+[Test #3] 		Size... OK!
+[Test #3] 		Multiplicity... OK!
+[Test #3] 		Operatore di uguaglianza operator==... OK!
+[Test #3] 		Contains... OK!
+[Test #3] 		Begin... OK!
+[Test #3] 		End... OK!
+[Test #3] 		Operatore di stream operator<<... {<Z, 1>, <a, 1>, <aaaa, 4>, <aaaz, 1>} OK!
+[Test #3] 	Fine metodi utilizzabili per multiset costanti
+
+[Test #3] 	I metodi non utilizzabili dell'interfaccia pubblica per multiset costanti sono:
+[Test #3] 	operator=, clear, swap, add, remove.
+[Test #3] 	Fine const correctness
+
+[Test #3] Fine test 3
+
+[Test #4] Test 4: ordine lessicografico decrescente, case insensitive
+
+[Test #4] 	Metodi fondamentali
+[Test #4] 	Inizio costruttore di default
+[Test #4] 		Controllo della size uguale a 0... Risultato: 0 OK!
+[Test #4] 		Controllo che non sia contenuto nemmeno l'elemento ... Risultato: true OK!
+[Test #4] 		Controllo l'operator== con un altro multiset vuoto dello stesso tipo... Risultato: true OK!
+[Test #4] 		Stampo il contenuto vuoto... Risultato: {} OK!
+[Test #4] 	Fine costruttore di default
+
+[Test #4] 	Inizio distruttore
+[Test #4] 		Creazione oggetto allocato sullo heap e puntatore... OK!
+[Test #4] 		Eseguo una delete... OK!
+[Test #4] 	Fine distruttore
+
+[Test #4] 	Inizio copy constructor
+[Test #4] 		Inizialmente aggiungo qualche elemento al primo multiset creato col ctor di default:
+[Test #4] 			Aggiungo l'elemento testing... OK!
+[Test #4] 			Aggiungo l'elemento TEST... OK!
+[Test #4] 			Aggiungo l'elemento TesT... OK!
+[Test #4] 			Aggiungo l'elemento Testin... OK!
+[Test #4] 			Aggiungo l'elemento t... OK!
+[Test #4] 			Aggiungo l'elemento T... OK!
+[Test #4] 			Aggiungo l'elemento a... OK!
+[Test #4] 			Aggiungo l'elemento z... OK!
+[Test #4] 			Aggiungo l'elemento 1... OK!
+[Test #4] 			Aggiungo l'elemento 2... OK!
+[Test #4] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #4] 		Stampo il nuovo contenuto del multiset... Risultato: {<z, 1>, <testing, 1>, <t, 2>, <a, 1>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>} OK!
+[Test #4] 		Ora creo una copia indipendente dei dati utilizzando il cctor... OK!
+[Test #4] 		Stampo il multiset appena creato... Risultato: {<z, 1>, <testing, 1>, <t, 2>, <a, 1>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>} OK!
+[Test #4] 		Controllo con l'operator== i due multiset... Risultato: true OK!
+[Test #4] 		Chiamo la clear sul primo multiset e poi lo stampo... Risultato: {} OK!
+[Test #4] 		Stampo il secondo multiset verificando l'indipendenza dei dati... Risultato: {<z, 1>, <testing, 1>, <t, 2>, <a, 1>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>} OK!
+[Test #4] 	Fine copy constructor
+
+[Test #4] 	Inizio operatore di assegnamento
+[Test #4] 		Utilizzo l'operator= per assegnare al primo multiset un multiset vuoto creato al volo... OK!
+[Test #4] 		Utilizzo l'operator= per assegnare al primo multiset i dati del secondo... OK!
+[Test #4] 		Utilizzo l'operator= per assegnare al primo multiset se' stesso (auto-assegnamento)... OK!
+[Test #4] 		Stampo il primo multiset... Risultato: {<z, 1>, <testing, 1>, <t, 2>, <a, 1>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>} OK!
+[Test #4] 		Rimuovo l'unica occorrenza dell'elemento A dal secondo multiset per poi verificare l'indipendenza... OK!
+[Test #4] 		Stampo il primo multiset... Risultato: {<z, 1>, <testing, 1>, <t, 2>, <a, 1>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>} OK!
+[Test #4] 		Stampo il secondo multiset... Risultato: {<z, 1>, <testing, 1>, <t, 2>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>} OK!
+[Test #4] 		Rimuovo un'occorrenza dell'elemento 2 dal primo multiset per poi verificare l'indipendenza... OK!
+[Test #4] 		Stampo il primo multiset... Risultato: {<z, 1>, <testing, 1>, <t, 2>, <a, 1>, <Testin, 1>, <TEST, 2>, <1, 1>} OK!
+[Test #4] 		Stampo il secondo multiset... Risultato: {<z, 1>, <testing, 1>, <t, 2>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>} OK!
+[Test #4] 	Fine operatore di assegnamento
+[Test #4] 	Fine metodi fondamentali
+
+[Test #4] 	Inizio test interfaccia pubblica
+[Test #4] 	Inizio costruttore che prende una coppia di iteratori
+[Test #4] 		Gli elementi che saranno aggiunti sono testing TesT t a 1 
+[Test #4] 		Creazione multiset usando due iteratori... Risultato: {<testing, 1>, <t, 1>, <a, 1>, <TesT, 1>, <1, 1>} OK!
+[Test #4] 		Creazione multiset usando due iteratori uguali, quindi che risultera' vuoto... Risultato: {} OK!
+[Test #4] 	Fine costruttore che prende una coppia di iteratori
+
+[Test #4] 	Inizio metodo clear
+[Test #4] 		Utilizzo la clear su un multiset non vuoto, ossia quello costruito con due iteratori
+[Test #4] 		Prima della clear: {<testing, 1>, <t, 1>, <a, 1>, <TesT, 1>, <1, 1>}
+[Test #4] 		Dopo la clear: {} OK!
+[Test #4] 		Utilizzo la clear su un multiset vuoto, ossia quello costruito con due iteratori uguali
+[Test #4] 		Prima della clear: {}
+[Test #4] 		Dopo la clear: {} OK!
+[Test #4] 	Fine metodo clear
+
+[Test #4] 	Inizio metodo swap
+[Test #4] 		Riutilizzo due multiset creati in precedenza qui sotto stampati:
+[Test #4] 		Primo multiset: {<z, 1>, <testing, 1>, <t, 2>, <a, 1>, <Testin, 1>, <TEST, 2>, <1, 1>}
+[Test #4] 		Secondo multiset: {<z, 1>, <testing, 1>, <t, 2>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>}
+[Test #4] 		Chiamo la swap... OK!
+[Test #4] 		Controllo che i due contenuti siano stati scambiati... OK!
+[Test #4] 		Stampo i due multiset dopo la swap qui sotto:
+[Test #4] 		Primo multiset: {<z, 1>, <testing, 1>, <t, 2>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>}
+[Test #4] 		Secondo multiset: {<z, 1>, <testing, 1>, <t, 2>, <a, 1>, <Testin, 1>, <TEST, 2>, <1, 1>}
+[Test #4] 		Ora scambio il primo multiset con un multiset vuoto creato in precedenza... OK!
+[Test #4] 		Stampo qui sotto i due multiset:
+[Test #4] 		Multiset che era vuoto: {<z, 1>, <testing, 1>, <t, 2>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>}
+[Test #4] 		Multiset che era riempito: {}
+[Test #4] 		Li riporto allo stato originale con un'altra swap... OK!
+[Test #4] 		Multiset di nuovo vuoto: {}
+[Test #4] 		Multiset di nuovo riempito: {<z, 1>, <testing, 1>, <t, 2>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>}
+[Test #4] 		Infine scambio due multiset vuoti tra di loro e li stampo... {} {} OK!
+[Test #4] 	Fine metodo swap
+
+[Test #4] 	Inizio metodo size
+[Test #4] 		Chiamo la size su un multiset vuoto, mi aspetto 0... Risultato: 0 OK!
+[Test #4] 		Chiamo la size sul multiset utilizzato in precedenza che stampo qui sotto:
+[Test #4] 		Multiset: {<z, 1>, <testing, 1>, <t, 2>, <Testin, 1>, <TEST, 2>, <2, 1>, <1, 1>}
+[Test #4] 		Mi aspetto 9... Risultato: 9 OK!
+[Test #4] 		Aggiungo l'elemento 3 e verifico che la size venga incrementata, mi aspetto 10... Risultato: 10 OK!
+[Test #4] 		Rimuovo l'elemento appena aggiunto e verifico che la size venga decrementata, mi aspetto 9... Risultato: 9 OK!
+[Test #4] 	Fine metodo size
+
+[Test #4] 	Inizio metodo add
+[Test #4] 		Utilizzo un multiset vuoto: {}
+[Test #4] 		Aggiungo 4 volte l'elemento ... OK!
+[Test #4] 		Verifico la correttezza del contenuto, mi aspetto {<, 4>}... Risultato: {<, 4>} OK!
+[Test #4] 		Aggiungo altri elementi:
+[Test #4] 			Aggiungo l'elemento TEST... OK!
+[Test #4] 			Aggiungo l'elemento Testin... OK!
+[Test #4] 			Aggiungo l'elemento T... OK!
+[Test #4] 			Aggiungo l'elemento z... OK!
+[Test #4] 			Aggiungo l'elemento 2... OK!
+[Test #4] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #4] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #4] 		{<z, 1>, <Testin, 1>, <TEST, 1>, <T, 1>, <2, 1>, <, 4>} OK!
+[Test #4] 	Fine metodo add
+
+[Test #4] 	Inizio metodo remove
+[Test #4] 		Utilizzo lo stesso multiset di prima, rimuovo 3 occorrenze di ... OK!
+[Test #4] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #4] 		{<z, 1>, <Testin, 1>, <TEST, 1>, <T, 1>, <2, 1>, <, 1>} OK!
+[Test #4] 		Verifico che ci sia una sola occorrenza di ... Risultato: true OK!
+[Test #4] 		Elimino l'ultima occorrenza di ... OK!
+[Test #4] 		Stampo il nuovo contenuto qui sotto:
+[Test #4] 		{<z, 1>, <Testin, 1>, <TEST, 1>, <T, 1>, <2, 1>} OK!
+[Test #4] 		(Mi aspetto l'eccezione custom) Provo ad eliminare l'elemento 3 non presente:
+[Test #4] 		Eccezione custom catturata: Impossibile rimuovere un elemento non presente nel multiset ordinato.
+[Test #4] 	Fine metodo remove
+
+[Test #4] 	Inizio metodo multiplicity
+[Test #4] 		Uso l'ultimo multiset utilizzato, controllo che per ogni elemento il metodo multiplicity restituisca il numero di occorrenze corretto:
+[Test #4] 			Molteplicita' dell'elemento z aspettata 1, ho 1 OK!
+[Test #4] 			Molteplicita' dell'elemento Testin aspettata 1, ho 1 OK!
+[Test #4] 			Molteplicita' dell'elemento TEST aspettata 1, ho 1 OK!
+[Test #4] 			Molteplicita' dell'elemento T aspettata 1, ho 1 OK!
+[Test #4] 			Molteplicita' dell'elemento 2 aspettata 1, ho 1 OK!
+[Test #4] 		Molteplicita' dell'elemento  non presente... Risultato: 0 OK!
+[Test #4] 	Fine metodo multiplicity
+
+[Test #4] 	Inizio operator==
+[Test #4] 		A partire dall'ultimo multiset utilizzato creo un altro multiset ma con policy di ordinamento diversa:
+[Test #4] 			Stampo il multiset che vado ad utilizzare:
+[Test #4] 			{<z, 1>, <Testin, 1>, <TEST, 1>, <T, 1>, <2, 1>} OK!
+[Test #4] 			Creo un nuovo multiset con ordinamento diverso, utilizzando il costruttore che prende due iteratori... OK!
+[Test #4] 		Nuovo multiset con ordinamento diverso creato, lo stampo qui sotto:
+[Test #4] 		{<2, 1>, <T, 1>, <TEST, 1>, <Testin, 1>, <z, 1>}
+[Test #4] 		Utilizzo l'operator== tra i due multiset ordinati in modo diverso... Risultato: true OK!
+[Test #4] 		Aggiungo l'elemento  al nuovo multiset e verifico che siano diversi... OK!
+[Test #4] 		Stampo il nuovo multiset qui sotto:
+[Test #4] 		{<, 1>, <2, 1>, <T, 1>, <TEST, 1>, <Testin, 1>, <z, 1>}
+[Test #4] 		Svuoto quest'ultimo con la clear... OK!
+[Test #4] 		Stampo il multiset... Risultato: {} OK!
+[Test #4] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento uguale... Risultato: true OK!
+[Test #4] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento diverso... Risultato: true OK!
+[Test #4] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento uguale... Risultato: true OK!
+[Test #4] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento diverso... Risultato: true OK!
+[Test #4] 	Fine operator==
+
+[Test #4] 	Inizio metodo contains
+[Test #4] 		Creo un nuovo multiset con i seguenti valori: just testing strings here JuSt JUST ju j J 
+[Test #4] 		Stampo il nuovo contenuto qui sotto:
+[Test #4] 		{<strings, 1>, <just testing, 1>, <ju, 1>, <j, 2>, <here, 1>, <JuSt, 2>} OK!
+[Test #4] 		Controllo che la contains dia true per ogni elemento distinto del multiset:
+[Test #4] 			Contains dell'elemento strings... Risultato: true OK!
+[Test #4] 			Contains dell'elemento just testing... Risultato: true OK!
+[Test #4] 			Contains dell'elemento ju... Risultato: true OK!
+[Test #4] 			Contains dell'elemento j... Risultato: true OK!
+[Test #4] 			Contains dell'elemento here... Risultato: true OK!
+[Test #4] 			Contains dell'elemento JuSt... Risultato: true OK!
+[Test #4] 		Controllo che la contains dia false per un elemento non contenuto:
+[Test #4] 			Contains dell'elemento 3... Risultato: false OK!
+[Test #4] 	Fine metodo contains
+
+[Test #4] 	Inizio stampa con iteratori
+[Test #4] 		Uso l'ultimo multiset utilizzato, stampo gli elementi in ordine del multiset ordinato tramite gli iteratori:
+[Test #4] 		strings just testing ju j j here JuSt JuSt  OK!
+[Test #4] 		Ora di nuovo ma stampo partendo dalla fine, per utilizzare il decremento nell'iteratore bidirectional:
+[Test #4] 		JuSt JuSt here j j ju just testing strings  OK!
+[Test #4] 		Controllo che gli elementi restituiti dall'iteratore costituiscono una permutazione degli elementi inseriti in precedenza... Risultato: true OK!
+[Test #4] 		Stampo con gli iteratori un multiset vuoto:
+[Test #4] 		 OK!
+[Test #4] 	Fine stampa con iteratori
+
+[Test #4] 	Fine interfaccia pubblica
+
+[Test #4] 	Inizio const correctness
+[Test #4] 	Metodi utilizzabili (da parte dell'utente o meno, come il distruttore) su un ordered_multiset costante:
+[Test #4] 		Ctor di default... OK!
+[Test #4] 		Costruttore che prende una coppia di iteratori... OK!
+[Test #4] 		Distruttore... OK!
+[Test #4] 		Copy constructor... OK!
+[Test #4] 		Size... OK!
+[Test #4] 		Multiplicity... OK!
+[Test #4] 		Operatore di uguaglianza operator==... OK!
+[Test #4] 		Contains... OK!
+[Test #4] 		Begin... OK!
+[Test #4] 		End... OK!
+[Test #4] 		Operatore di stream operator<<... {<strings, 1>, <just testing, 1>, <ju, 1>, <j, 2>, <here, 1>, <JuSt, 2>} OK!
+[Test #4] 	Fine metodi utilizzabili per multiset costanti
+
+[Test #4] 	I metodi non utilizzabili dell'interfaccia pubblica per multiset costanti sono:
+[Test #4] 	operator=, clear, swap, add, remove.
+[Test #4] 	Fine const correctness
+
+[Test #4] Fine test 4
+
+[Test #4] Fine unit test per il tipo std::string
+

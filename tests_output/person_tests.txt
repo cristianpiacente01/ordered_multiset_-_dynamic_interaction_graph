@@ -1,0 +1,385 @@
+[Test #0] Inizio unit test per il tipo CUSTOM person
+
+[Test #1] Test 1: eta' in ordine crescente
+
+[Test #1] 	Metodi fondamentali
+[Test #1] 	Inizio costruttore di default
+[Test #1] 		Controllo della size uguale a 0... Risultato: 0 OK!
+[Test #1] 		Controllo che non sia contenuto nemmeno l'elemento {"name": , "surname": , "age": 0}... Risultato: true OK!
+[Test #1] 		Controllo l'operator== con un altro multiset vuoto dello stesso tipo... Risultato: true OK!
+[Test #1] 		Stampo il contenuto vuoto... Risultato: {} OK!
+[Test #1] 	Fine costruttore di default
+
+[Test #1] 	Inizio distruttore
+[Test #1] 		Creazione oggetto allocato sullo heap e puntatore... OK!
+[Test #1] 		Eseguo una delete... OK!
+[Test #1] 	Fine distruttore
+
+[Test #1] 	Inizio copy constructor
+[Test #1] 		Inizialmente aggiungo qualche elemento al primo multiset creato col ctor di default:
+[Test #1] 			Aggiungo l'elemento {"name": john, "surname": doe, "age": 12}... OK!
+[Test #1] 			Aggiungo l'elemento {"name": cristian, "surname": piacente, "age": 21}... OK!
+[Test #1] 			Aggiungo l'elemento {"name": john, "surname": doe, "age": 12}... OK!
+[Test #1] 			Aggiungo l'elemento {"name": jane, "surname": doe, "age": 15}... OK!
+[Test #1] 			Aggiungo l'elemento {"name": joe, "surname": sixpack, "age": 19}... OK!
+[Test #1] 			Aggiungo l'elemento {"name": joe, "surname": sixpack, "age": 19}... OK!
+[Test #1] 			Aggiungo l'elemento {"name": joe, "surname": citizen, "age": 40}... OK!
+[Test #1] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #1] 		Stampo il nuovo contenuto del multiset... Risultato: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": cristian, "surname": piacente, "age": 21}, 1>, <{"name": joe, "surname": citizen, "age": 40}, 1>} OK!
+[Test #1] 		Ora creo una copia indipendente dei dati utilizzando il cctor... OK!
+[Test #1] 		Stampo il multiset appena creato... Risultato: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": cristian, "surname": piacente, "age": 21}, 1>, <{"name": joe, "surname": citizen, "age": 40}, 1>} OK!
+[Test #1] 		Controllo con l'operator== i due multiset... Risultato: true OK!
+[Test #1] 		Chiamo la clear sul primo multiset e poi lo stampo... Risultato: {} OK!
+[Test #1] 		Stampo il secondo multiset verificando l'indipendenza dei dati... Risultato: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": cristian, "surname": piacente, "age": 21}, 1>, <{"name": joe, "surname": citizen, "age": 40}, 1>} OK!
+[Test #1] 	Fine copy constructor
+
+[Test #1] 	Inizio operatore di assegnamento
+[Test #1] 		Utilizzo l'operator= per assegnare al primo multiset un multiset vuoto creato al volo... OK!
+[Test #1] 		Utilizzo l'operator= per assegnare al primo multiset i dati del secondo... OK!
+[Test #1] 		Utilizzo l'operator= per assegnare al primo multiset se' stesso (auto-assegnamento)... OK!
+[Test #1] 		Stampo il primo multiset... Risultato: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": cristian, "surname": piacente, "age": 21}, 1>, <{"name": joe, "surname": citizen, "age": 40}, 1>} OK!
+[Test #1] 		Rimuovo l'unica occorrenza dell'elemento {"name": CRISTIAN, "surname": Piacente, "age": 21} dal secondo multiset per poi verificare l'indipendenza... OK!
+[Test #1] 		Stampo il primo multiset... Risultato: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": cristian, "surname": piacente, "age": 21}, 1>, <{"name": joe, "surname": citizen, "age": 40}, 1>} OK!
+[Test #1] 		Stampo il secondo multiset... Risultato: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": joe, "surname": citizen, "age": 40}, 1>} OK!
+[Test #1] 		Rimuovo un'occorrenza dell'elemento {"name": john, "surname": doe, "age": 12} dal primo multiset per poi verificare l'indipendenza... OK!
+[Test #1] 		Stampo il primo multiset... Risultato: {<{"name": john, "surname": doe, "age": 12}, 1>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": cristian, "surname": piacente, "age": 21}, 1>, <{"name": joe, "surname": citizen, "age": 40}, 1>} OK!
+[Test #1] 		Stampo il secondo multiset... Risultato: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": joe, "surname": citizen, "age": 40}, 1>} OK!
+[Test #1] 	Fine operatore di assegnamento
+[Test #1] 	Fine metodi fondamentali
+
+[Test #1] 	Inizio test interfaccia pubblica
+[Test #1] 	Inizio costruttore che prende una coppia di iteratori
+[Test #1] 		Gli elementi che saranno aggiunti sono {"name": john, "surname": doe, "age": 12} {"name": john, "surname": doe, "age": 12} {"name": joe, "surname": sixpack, "age": 19} {"name": joe, "surname": citizen, "age": 40} 
+[Test #1] 		Creazione multiset usando due iteratori... Risultato: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": joe, "surname": sixpack, "age": 19}, 1>, <{"name": joe, "surname": citizen, "age": 40}, 1>} OK!
+[Test #1] 		Creazione multiset usando due iteratori uguali, quindi che risultera' vuoto... Risultato: {} OK!
+[Test #1] 	Fine costruttore che prende una coppia di iteratori
+
+[Test #1] 	Inizio metodo clear
+[Test #1] 		Utilizzo la clear su un multiset non vuoto, ossia quello costruito con due iteratori
+[Test #1] 		Prima della clear: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": joe, "surname": sixpack, "age": 19}, 1>, <{"name": joe, "surname": citizen, "age": 40}, 1>}
+[Test #1] 		Dopo la clear: {} OK!
+[Test #1] 		Utilizzo la clear su un multiset vuoto, ossia quello costruito con due iteratori uguali
+[Test #1] 		Prima della clear: {}
+[Test #1] 		Dopo la clear: {} OK!
+[Test #1] 	Fine metodo clear
+
+[Test #1] 	Inizio metodo swap
+[Test #1] 		Riutilizzo due multiset creati in precedenza qui sotto stampati:
+[Test #1] 		Primo multiset: {<{"name": john, "surname": doe, "age": 12}, 1>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": cristian, "surname": piacente, "age": 21}, 1>, <{"name": joe, "surname": citizen, "age": 40}, 1>}
+[Test #1] 		Secondo multiset: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": joe, "surname": citizen, "age": 40}, 1>}
+[Test #1] 		Chiamo la swap... OK!
+[Test #1] 		Controllo che i due contenuti siano stati scambiati... OK!
+[Test #1] 		Stampo i due multiset dopo la swap qui sotto:
+[Test #1] 		Primo multiset: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": joe, "surname": citizen, "age": 40}, 1>}
+[Test #1] 		Secondo multiset: {<{"name": john, "surname": doe, "age": 12}, 1>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": cristian, "surname": piacente, "age": 21}, 1>, <{"name": joe, "surname": citizen, "age": 40}, 1>}
+[Test #1] 		Ora scambio il primo multiset con un multiset vuoto creato in precedenza... OK!
+[Test #1] 		Stampo qui sotto i due multiset:
+[Test #1] 		Multiset che era vuoto: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": joe, "surname": citizen, "age": 40}, 1>}
+[Test #1] 		Multiset che era riempito: {}
+[Test #1] 		Li riporto allo stato originale con un'altra swap... OK!
+[Test #1] 		Multiset di nuovo vuoto: {}
+[Test #1] 		Multiset di nuovo riempito: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": joe, "surname": citizen, "age": 40}, 1>}
+[Test #1] 		Infine scambio due multiset vuoti tra di loro e li stampo... {} {} OK!
+[Test #1] 	Fine metodo swap
+
+[Test #1] 	Inizio metodo size
+[Test #1] 		Chiamo la size su un multiset vuoto, mi aspetto 0... Risultato: 0 OK!
+[Test #1] 		Chiamo la size sul multiset utilizzato in precedenza che stampo qui sotto:
+[Test #1] 		Multiset: {<{"name": john, "surname": doe, "age": 12}, 2>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 2>, <{"name": joe, "surname": citizen, "age": 40}, 1>}
+[Test #1] 		Mi aspetto 6... Risultato: 6 OK!
+[Test #1] 		Aggiungo l'elemento {"name": random, "surname": person, "age": 42} e verifico che la size venga incrementata, mi aspetto 7... Risultato: 7 OK!
+[Test #1] 		Rimuovo l'elemento appena aggiunto e verifico che la size venga decrementata, mi aspetto 6... Risultato: 6 OK!
+[Test #1] 	Fine metodo size
+
+[Test #1] 	Inizio metodo add
+[Test #1] 		Utilizzo un multiset vuoto: {}
+[Test #1] 		Aggiungo 6 volte l'elemento {"name": , "surname": , "age": 0}... OK!
+[Test #1] 		Verifico la correttezza del contenuto, mi aspetto {<{"name": , "surname": , "age": 0}, 6>}... Risultato: {<{"name": , "surname": , "age": 0}, 6>} OK!
+[Test #1] 		Aggiungo altri elementi:
+[Test #1] 			Aggiungo l'elemento {"name": cristian, "surname": piacente, "age": 21}... OK!
+[Test #1] 			Aggiungo l'elemento {"name": jane, "surname": doe, "age": 15}... OK!
+[Test #1] 			Aggiungo l'elemento {"name": joe, "surname": sixpack, "age": 19}... OK!
+[Test #1] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #1] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #1] 		{<{"name": , "surname": , "age": 0}, 6>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 1>, <{"name": cristian, "surname": piacente, "age": 21}, 1>} OK!
+[Test #1] 	Fine metodo add
+
+[Test #1] 	Inizio metodo remove
+[Test #1] 		Utilizzo lo stesso multiset di prima, rimuovo 5 occorrenze di {"name": , "surname": , "age": 0}... OK!
+[Test #1] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #1] 		{<{"name": , "surname": , "age": 0}, 1>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 1>, <{"name": cristian, "surname": piacente, "age": 21}, 1>} OK!
+[Test #1] 		Verifico che ci sia una sola occorrenza di {"name": , "surname": , "age": 0}... Risultato: true OK!
+[Test #1] 		Elimino l'ultima occorrenza di {"name": , "surname": , "age": 0}... OK!
+[Test #1] 		Stampo il nuovo contenuto qui sotto:
+[Test #1] 		{<{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 1>, <{"name": cristian, "surname": piacente, "age": 21}, 1>} OK!
+[Test #1] 		(Mi aspetto l'eccezione custom) Provo ad eliminare l'elemento {"name": random, "surname": person, "age": 42} non presente:
+[Test #1] 		Eccezione custom catturata: Impossibile rimuovere un elemento non presente nel multiset ordinato.
+[Test #1] 	Fine metodo remove
+
+[Test #1] 	Inizio metodo multiplicity
+[Test #1] 		Uso l'ultimo multiset utilizzato, controllo che per ogni elemento il metodo multiplicity restituisca il numero di occorrenze corretto:
+[Test #1] 			Molteplicita' dell'elemento {"name": jane, "surname": doe, "age": 15} aspettata 1, ho 1 OK!
+[Test #1] 			Molteplicita' dell'elemento {"name": joe, "surname": sixpack, "age": 19} aspettata 1, ho 1 OK!
+[Test #1] 			Molteplicita' dell'elemento {"name": cristian, "surname": piacente, "age": 21} aspettata 1, ho 1 OK!
+[Test #1] 		Molteplicita' dell'elemento {"name": , "surname": , "age": 0} non presente... Risultato: 0 OK!
+[Test #1] 	Fine metodo multiplicity
+
+[Test #1] 	Inizio operator==
+[Test #1] 		A partire dall'ultimo multiset utilizzato creo un altro multiset ma con policy di ordinamento diversa:
+[Test #1] 			Stampo il multiset che vado ad utilizzare:
+[Test #1] 			{<{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 1>, <{"name": cristian, "surname": piacente, "age": 21}, 1>} OK!
+[Test #1] 			Creo un nuovo multiset con ordinamento diverso, utilizzando il costruttore che prende due iteratori... OK!
+[Test #1] 		Nuovo multiset con ordinamento diverso creato, lo stampo qui sotto:
+[Test #1] 		{<{"name": cristian, "surname": piacente, "age": 21}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 1>, <{"name": jane, "surname": doe, "age": 15}, 1>}
+[Test #1] 		Utilizzo l'operator== tra i due multiset ordinati in modo diverso... Risultato: true OK!
+[Test #1] 		Aggiungo l'elemento {"name": , "surname": , "age": 0} al nuovo multiset e verifico che siano diversi... OK!
+[Test #1] 		Stampo il nuovo multiset qui sotto:
+[Test #1] 		{<{"name": cristian, "surname": piacente, "age": 21}, 1>, <{"name": joe, "surname": sixpack, "age": 19}, 1>, <{"name": jane, "surname": doe, "age": 15}, 1>, <{"name": , "surname": , "age": 0}, 1>}
+[Test #1] 		Svuoto quest'ultimo con la clear... OK!
+[Test #1] 		Stampo il multiset... Risultato: {} OK!
+[Test #1] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento uguale... Risultato: true OK!
+[Test #1] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento diverso... Risultato: true OK!
+[Test #1] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento uguale... Risultato: true OK!
+[Test #1] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento diverso... Risultato: true OK!
+[Test #1] 	Fine operator==
+
+[Test #1] 	Inizio metodo contains
+[Test #1] 		Creo un nuovo multiset con i seguenti valori: {"name": joe, "surname": johns, "age": 28} {"name": john, "surname": public, "age": 28} {"name": john, "surname": cena, "age": 45} {"name": cristian, "surname": p, "age": 99} 
+[Test #1] 		Stampo il nuovo contenuto qui sotto:
+[Test #1] 		{<{"name": john, "surname": public, "age": 28}, 1>, <{"name": joe, "surname": johns, "age": 28}, 1>, <{"name": john, "surname": cena, "age": 45}, 1>, <{"name": cristian, "surname": p, "age": 99}, 1>} OK!
+[Test #1] 		Controllo che la contains dia true per ogni elemento distinto del multiset:
+[Test #1] 			Contains dell'elemento {"name": joe, "surname": johns, "age": 28}... Risultato: true OK!
+[Test #1] 			Contains dell'elemento {"name": john, "surname": public, "age": 28}... Risultato: true OK!
+[Test #1] 			Contains dell'elemento {"name": john, "surname": cena, "age": 45}... Risultato: true OK!
+[Test #1] 			Contains dell'elemento {"name": cristian, "surname": p, "age": 99}... Risultato: true OK!
+[Test #1] 		Controllo che la contains dia false per un elemento non contenuto:
+[Test #1] 			Contains dell'elemento {"name": random, "surname": person, "age": 42}... Risultato: false OK!
+[Test #1] 	Fine metodo contains
+
+[Test #1] 	Inizio stampa con iteratori
+[Test #1] 		Uso l'ultimo multiset utilizzato, stampo gli elementi in ordine del multiset ordinato tramite gli iteratori:
+[Test #1] 		{"name": john, "surname": public, "age": 28} {"name": joe, "surname": johns, "age": 28} {"name": john, "surname": cena, "age": 45} {"name": cristian, "surname": p, "age": 99}  OK!
+[Test #1] 		Ora di nuovo ma stampo partendo dalla fine, per utilizzare il decremento nell'iteratore bidirectional:
+[Test #1] 		{"name": cristian, "surname": p, "age": 99} {"name": john, "surname": cena, "age": 45} {"name": joe, "surname": johns, "age": 28} {"name": john, "surname": public, "age": 28}  OK!
+[Test #1] 		Controllo che gli elementi restituiti dall'iteratore costituiscono una permutazione degli elementi inseriti in precedenza... Risultato: true OK!
+[Test #1] 		Stampo con gli iteratori un multiset vuoto:
+[Test #1] 		 OK!
+[Test #1] 	Fine stampa con iteratori
+
+[Test #1] 	Fine interfaccia pubblica
+
+[Test #1] 	Inizio const correctness
+[Test #1] 	Metodi utilizzabili (da parte dell'utente o meno, come il distruttore) su un ordered_multiset costante:
+[Test #1] 		Ctor di default... OK!
+[Test #1] 		Costruttore che prende una coppia di iteratori... OK!
+[Test #1] 		Distruttore... OK!
+[Test #1] 		Copy constructor... OK!
+[Test #1] 		Size... OK!
+[Test #1] 		Multiplicity... OK!
+[Test #1] 		Operatore di uguaglianza operator==... OK!
+[Test #1] 		Contains... OK!
+[Test #1] 		Begin... OK!
+[Test #1] 		End... OK!
+[Test #1] 		Operatore di stream operator<<... {<{"name": john, "surname": public, "age": 28}, 1>, <{"name": joe, "surname": johns, "age": 28}, 1>, <{"name": john, "surname": cena, "age": 45}, 1>, <{"name": cristian, "surname": p, "age": 99}, 1>} OK!
+[Test #1] 	Fine metodi utilizzabili per multiset costanti
+
+[Test #1] 	I metodi non utilizzabili dell'interfaccia pubblica per multiset costanti sono:
+[Test #1] 	operator=, clear, swap, add, remove.
+[Test #1] 	Fine const correctness
+
+[Test #1] Fine test 1
+
+[Test #2] Test 2: eta' in ordine decrescente
+
+[Test #2] 	Metodi fondamentali
+[Test #2] 	Inizio costruttore di default
+[Test #2] 		Controllo della size uguale a 0... Risultato: 0 OK!
+[Test #2] 		Controllo che non sia contenuto nemmeno l'elemento {"name": , "surname": , "age": 0}... Risultato: true OK!
+[Test #2] 		Controllo l'operator== con un altro multiset vuoto dello stesso tipo... Risultato: true OK!
+[Test #2] 		Stampo il contenuto vuoto... Risultato: {} OK!
+[Test #2] 	Fine costruttore di default
+
+[Test #2] 	Inizio distruttore
+[Test #2] 		Creazione oggetto allocato sullo heap e puntatore... OK!
+[Test #2] 		Eseguo una delete... OK!
+[Test #2] 	Fine distruttore
+
+[Test #2] 	Inizio copy constructor
+[Test #2] 		Inizialmente aggiungo qualche elemento al primo multiset creato col ctor di default:
+[Test #2] 			Aggiungo l'elemento {"name": paolo, "surname": rossi, "age": 50}... OK!
+[Test #2] 			Aggiungo l'elemento {"name": marco, "surname": bianchi, "age": 40}... OK!
+[Test #2] 			Aggiungo l'elemento {"name": simone, "surname": verdi, "age": 40}... OK!
+[Test #2] 			Aggiungo l'elemento {"name": matteo, "surname": salvo, "age": 36}... OK!
+[Test #2] 			Aggiungo l'elemento {"name": cat, "surname": gatto, "age": 36}... OK!
+[Test #2] 			Aggiungo l'elemento {"name": cat, "surname": gatto, "age": 36}... OK!
+[Test #2] 			Aggiungo l'elemento {"name": roberto, "surname": fantasia, "age": 25}... OK!
+[Test #2] 			Aggiungo l'elemento {"name": nonneho, "surname": piu, "age": 36}... OK!
+[Test #2] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #2] 		Stampo il nuovo contenuto del multiset... Risultato: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>} OK!
+[Test #2] 		Ora creo una copia indipendente dei dati utilizzando il cctor... OK!
+[Test #2] 		Stampo il multiset appena creato... Risultato: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>} OK!
+[Test #2] 		Controllo con l'operator== i due multiset... Risultato: true OK!
+[Test #2] 		Chiamo la clear sul primo multiset e poi lo stampo... Risultato: {} OK!
+[Test #2] 		Stampo il secondo multiset verificando l'indipendenza dei dati... Risultato: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>} OK!
+[Test #2] 	Fine copy constructor
+
+[Test #2] 	Inizio operatore di assegnamento
+[Test #2] 		Utilizzo l'operator= per assegnare al primo multiset un multiset vuoto creato al volo... OK!
+[Test #2] 		Utilizzo l'operator= per assegnare al primo multiset i dati del secondo... OK!
+[Test #2] 		Utilizzo l'operator= per assegnare al primo multiset se' stesso (auto-assegnamento)... OK!
+[Test #2] 		Stampo il primo multiset... Risultato: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>} OK!
+[Test #2] 		Rimuovo l'unica occorrenza dell'elemento {"name": MarCo, "surname": BianChi, "age": 40} dal secondo multiset per poi verificare l'indipendenza... OK!
+[Test #2] 		Stampo il primo multiset... Risultato: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>} OK!
+[Test #2] 		Stampo il secondo multiset... Risultato: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>} OK!
+[Test #2] 		Rimuovo un'occorrenza dell'elemento {"name": cat, "surname": GATTO, "age": 36} dal primo multiset per poi verificare l'indipendenza... OK!
+[Test #2] 		Stampo il primo multiset... Risultato: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>} OK!
+[Test #2] 		Stampo il secondo multiset... Risultato: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>} OK!
+[Test #2] 	Fine operatore di assegnamento
+[Test #2] 	Fine metodi fondamentali
+
+[Test #2] 	Inizio test interfaccia pubblica
+[Test #2] 	Inizio costruttore che prende una coppia di iteratori
+[Test #2] 		Gli elementi che saranno aggiunti sono {"name": paolo, "surname": rossi, "age": 50} {"name": simone, "surname": verdi, "age": 40} {"name": cat, "surname": gatto, "age": 36} {"name": roberto, "surname": fantasia, "age": 25} 
+[Test #2] 		Creazione multiset usando due iteratori... Risultato: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>} OK!
+[Test #2] 		Creazione multiset usando due iteratori uguali, quindi che risultera' vuoto... Risultato: {} OK!
+[Test #2] 	Fine costruttore che prende una coppia di iteratori
+
+[Test #2] 	Inizio metodo clear
+[Test #2] 		Utilizzo la clear su un multiset non vuoto, ossia quello costruito con due iteratori
+[Test #2] 		Prima della clear: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>}
+[Test #2] 		Dopo la clear: {} OK!
+[Test #2] 		Utilizzo la clear su un multiset vuoto, ossia quello costruito con due iteratori uguali
+[Test #2] 		Prima della clear: {}
+[Test #2] 		Dopo la clear: {} OK!
+[Test #2] 	Fine metodo clear
+
+[Test #2] 	Inizio metodo swap
+[Test #2] 		Riutilizzo due multiset creati in precedenza qui sotto stampati:
+[Test #2] 		Primo multiset: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>}
+[Test #2] 		Secondo multiset: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>}
+[Test #2] 		Chiamo la swap... OK!
+[Test #2] 		Controllo che i due contenuti siano stati scambiati... OK!
+[Test #2] 		Stampo i due multiset dopo la swap qui sotto:
+[Test #2] 		Primo multiset: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>}
+[Test #2] 		Secondo multiset: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>}
+[Test #2] 		Ora scambio il primo multiset con un multiset vuoto creato in precedenza... OK!
+[Test #2] 		Stampo qui sotto i due multiset:
+[Test #2] 		Multiset che era vuoto: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>}
+[Test #2] 		Multiset che era riempito: {}
+[Test #2] 		Li riporto allo stato originale con un'altra swap... OK!
+[Test #2] 		Multiset di nuovo vuoto: {}
+[Test #2] 		Multiset di nuovo riempito: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>}
+[Test #2] 		Infine scambio due multiset vuoti tra di loro e li stampo... {} {} OK!
+[Test #2] 	Fine metodo swap
+
+[Test #2] 	Inizio metodo size
+[Test #2] 		Chiamo la size su un multiset vuoto, mi aspetto 0... Risultato: 0 OK!
+[Test #2] 		Chiamo la size sul multiset utilizzato in precedenza che stampo qui sotto:
+[Test #2] 		Multiset: {<{"name": paolo, "surname": rossi, "age": 50}, 1>, <{"name": simone, "surname": verdi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 2>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": roberto, "surname": fantasia, "age": 25}, 1>}
+[Test #2] 		Mi aspetto 7... Risultato: 7 OK!
+[Test #2] 		Aggiungo l'elemento {"name": some, "surname": stranger, "age": 42} e verifico che la size venga incrementata, mi aspetto 8... Risultato: 8 OK!
+[Test #2] 		Rimuovo l'elemento appena aggiunto e verifico che la size venga decrementata, mi aspetto 7... Risultato: 7 OK!
+[Test #2] 	Fine metodo size
+
+[Test #2] 	Inizio metodo add
+[Test #2] 		Utilizzo un multiset vuoto: {}
+[Test #2] 		Aggiungo 4 volte l'elemento {"name": , "surname": , "age": 0}... OK!
+[Test #2] 		Verifico la correttezza del contenuto, mi aspetto {<{"name": , "surname": , "age": 0}, 4>}... Risultato: {<{"name": , "surname": , "age": 0}, 4>} OK!
+[Test #2] 		Aggiungo altri elementi:
+[Test #2] 			Aggiungo l'elemento {"name": marco, "surname": bianchi, "age": 40}... OK!
+[Test #2] 			Aggiungo l'elemento {"name": matteo, "surname": salvo, "age": 36}... OK!
+[Test #2] 			Aggiungo l'elemento {"name": cat, "surname": gatto, "age": 36}... OK!
+[Test #2] 			Aggiungo l'elemento {"name": nonneho, "surname": piu, "age": 36}... OK!
+[Test #2] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #2] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #2] 		{<{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": , "surname": , "age": 0}, 4>} OK!
+[Test #2] 	Fine metodo add
+
+[Test #2] 	Inizio metodo remove
+[Test #2] 		Utilizzo lo stesso multiset di prima, rimuovo 3 occorrenze di {"name": , "surname": , "age": 0}... OK!
+[Test #2] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #2] 		{<{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": , "surname": , "age": 0}, 1>} OK!
+[Test #2] 		Verifico che ci sia una sola occorrenza di {"name": , "surname": , "age": 0}... Risultato: true OK!
+[Test #2] 		Elimino l'ultima occorrenza di {"name": , "surname": , "age": 0}... OK!
+[Test #2] 		Stampo il nuovo contenuto qui sotto:
+[Test #2] 		{<{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": matteo, "surname": salvo, "age": 36}, 1>} OK!
+[Test #2] 		(Mi aspetto l'eccezione custom) Provo ad eliminare l'elemento {"name": some, "surname": stranger, "age": 42} non presente:
+[Test #2] 		Eccezione custom catturata: Impossibile rimuovere un elemento non presente nel multiset ordinato.
+[Test #2] 	Fine metodo remove
+
+[Test #2] 	Inizio metodo multiplicity
+[Test #2] 		Uso l'ultimo multiset utilizzato, controllo che per ogni elemento il metodo multiplicity restituisca il numero di occorrenze corretto:
+[Test #2] 			Molteplicita' dell'elemento {"name": marco, "surname": bianchi, "age": 40} aspettata 1, ho 1 OK!
+[Test #2] 			Molteplicita' dell'elemento {"name": matteo, "surname": salvo, "age": 36} aspettata 1, ho 1 OK!
+[Test #2] 			Molteplicita' dell'elemento {"name": cat, "surname": gatto, "age": 36} aspettata 1, ho 1 OK!
+[Test #2] 			Molteplicita' dell'elemento {"name": nonneho, "surname": piu, "age": 36} aspettata 1, ho 1 OK!
+[Test #2] 		Molteplicita' dell'elemento {"name": , "surname": , "age": 0} non presente... Risultato: 0 OK!
+[Test #2] 	Fine metodo multiplicity
+
+[Test #2] 	Inizio operator==
+[Test #2] 		A partire dall'ultimo multiset utilizzato creo un altro multiset ma con policy di ordinamento diversa:
+[Test #2] 			Stampo il multiset che vado ad utilizzare:
+[Test #2] 			{<{"name": marco, "surname": bianchi, "age": 40}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": matteo, "surname": salvo, "age": 36}, 1>} OK!
+[Test #2] 			Creo un nuovo multiset con ordinamento diverso, utilizzando il costruttore che prende due iteratori... OK!
+[Test #2] 		Nuovo multiset con ordinamento diverso creato, lo stampo qui sotto:
+[Test #2] 		{<{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": marco, "surname": bianchi, "age": 40}, 1>}
+[Test #2] 		Utilizzo l'operator== tra i due multiset ordinati in modo diverso... Risultato: true OK!
+[Test #2] 		Aggiungo l'elemento {"name": , "surname": , "age": 0} al nuovo multiset e verifico che siano diversi... OK!
+[Test #2] 		Stampo il nuovo multiset qui sotto:
+[Test #2] 		{<{"name": , "surname": , "age": 0}, 1>, <{"name": matteo, "surname": salvo, "age": 36}, 1>, <{"name": cat, "surname": gatto, "age": 36}, 1>, <{"name": nonneho, "surname": piu, "age": 36}, 1>, <{"name": marco, "surname": bianchi, "age": 40}, 1>}
+[Test #2] 		Svuoto quest'ultimo con la clear... OK!
+[Test #2] 		Stampo il multiset... Risultato: {} OK!
+[Test #2] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento uguale... Risultato: true OK!
+[Test #2] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento diverso... Risultato: true OK!
+[Test #2] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento uguale... Risultato: true OK!
+[Test #2] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento diverso... Risultato: true OK!
+[Test #2] 	Fine operator==
+
+[Test #2] 	Inizio metodo contains
+[Test #2] 		Creo un nuovo multiset con i seguenti valori: {"name": francesco, "surname": rossi, "age": 23} {"name": gianfranco, "surname": doe, "age": 23} {"name": rock, "surname": roccia, "age": 4} {"name": sasso, "surname": raro, "age": 25} 
+[Test #2] 		Stampo il nuovo contenuto qui sotto:
+[Test #2] 		{<{"name": sasso, "surname": raro, "age": 25}, 1>, <{"name": gianfranco, "surname": doe, "age": 23}, 1>, <{"name": francesco, "surname": rossi, "age": 23}, 1>, <{"name": rock, "surname": roccia, "age": 4}, 1>} OK!
+[Test #2] 		Controllo che la contains dia true per ogni elemento distinto del multiset:
+[Test #2] 			Contains dell'elemento {"name": sasso, "surname": raro, "age": 25}... Risultato: true OK!
+[Test #2] 			Contains dell'elemento {"name": francesco, "surname": rossi, "age": 23}... Risultato: true OK!
+[Test #2] 			Contains dell'elemento {"name": gianfranco, "surname": doe, "age": 23}... Risultato: true OK!
+[Test #2] 			Contains dell'elemento {"name": rock, "surname": roccia, "age": 4}... Risultato: true OK!
+[Test #2] 		Controllo che la contains dia false per un elemento non contenuto:
+[Test #2] 			Contains dell'elemento {"name": some, "surname": stranger, "age": 42}... Risultato: false OK!
+[Test #2] 	Fine metodo contains
+
+[Test #2] 	Inizio stampa con iteratori
+[Test #2] 		Uso l'ultimo multiset utilizzato, stampo gli elementi in ordine del multiset ordinato tramite gli iteratori:
+[Test #2] 		{"name": sasso, "surname": raro, "age": 25} {"name": gianfranco, "surname": doe, "age": 23} {"name": francesco, "surname": rossi, "age": 23} {"name": rock, "surname": roccia, "age": 4}  OK!
+[Test #2] 		Ora di nuovo ma stampo partendo dalla fine, per utilizzare il decremento nell'iteratore bidirectional:
+[Test #2] 		{"name": rock, "surname": roccia, "age": 4} {"name": francesco, "surname": rossi, "age": 23} {"name": gianfranco, "surname": doe, "age": 23} {"name": sasso, "surname": raro, "age": 25}  OK!
+[Test #2] 		Controllo che gli elementi restituiti dall'iteratore costituiscono una permutazione degli elementi inseriti in precedenza... Risultato: true OK!
+[Test #2] 		Stampo con gli iteratori un multiset vuoto:
+[Test #2] 		 OK!
+[Test #2] 	Fine stampa con iteratori
+
+[Test #2] 	Fine interfaccia pubblica
+
+[Test #2] 	Inizio const correctness
+[Test #2] 	Metodi utilizzabili (da parte dell'utente o meno, come il distruttore) su un ordered_multiset costante:
+[Test #2] 		Ctor di default... OK!
+[Test #2] 		Costruttore che prende una coppia di iteratori... OK!
+[Test #2] 		Distruttore... OK!
+[Test #2] 		Copy constructor... OK!
+[Test #2] 		Size... OK!
+[Test #2] 		Multiplicity... OK!
+[Test #2] 		Operatore di uguaglianza operator==... OK!
+[Test #2] 		Contains... OK!
+[Test #2] 		Begin... OK!
+[Test #2] 		End... OK!
+[Test #2] 		Operatore di stream operator<<... {<{"name": sasso, "surname": raro, "age": 25}, 1>, <{"name": gianfranco, "surname": doe, "age": 23}, 1>, <{"name": francesco, "surname": rossi, "age": 23}, 1>, <{"name": rock, "surname": roccia, "age": 4}, 1>} OK!
+[Test #2] 	Fine metodi utilizzabili per multiset costanti
+
+[Test #2] 	I metodi non utilizzabili dell'interfaccia pubblica per multiset costanti sono:
+[Test #2] 	operator=, clear, swap, add, remove.
+[Test #2] 	Fine const correctness
+
+[Test #2] Fine test 2
+
+[Test #2] Fine unit test per il tipo CUSTOM person
+

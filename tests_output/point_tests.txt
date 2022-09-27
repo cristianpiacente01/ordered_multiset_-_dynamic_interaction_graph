@@ -1,0 +1,377 @@
+[Test #0] Inizio unit test per il tipo CUSTOM point
+
+[Test #1] Test 1: x^2 + y^2 in ordine crescente
+
+[Test #1] 	Metodi fondamentali
+[Test #1] 	Inizio costruttore di default
+[Test #1] 		Controllo della size uguale a 0... Risultato: 0 OK!
+[Test #1] 		Controllo che non sia contenuto nemmeno l'elemento (0, 0)... Risultato: true OK!
+[Test #1] 		Controllo l'operator== con un altro multiset vuoto dello stesso tipo... Risultato: true OK!
+[Test #1] 		Stampo il contenuto vuoto... Risultato: {} OK!
+[Test #1] 	Fine costruttore di default
+
+[Test #1] 	Inizio distruttore
+[Test #1] 		Creazione oggetto allocato sullo heap e puntatore... OK!
+[Test #1] 		Eseguo una delete... OK!
+[Test #1] 	Fine distruttore
+
+[Test #1] 	Inizio copy constructor
+[Test #1] 		Inizialmente aggiungo qualche elemento al primo multiset creato col ctor di default:
+[Test #1] 			Aggiungo l'elemento (0, 0)... OK!
+[Test #1] 			Aggiungo l'elemento (1, 2)... OK!
+[Test #1] 			Aggiungo l'elemento (1, 2)... OK!
+[Test #1] 			Aggiungo l'elemento (-1, -2)... OK!
+[Test #1] 			Aggiungo l'elemento (-5, -10)... OK!
+[Test #1] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #1] 		Stampo il nuovo contenuto del multiset... Risultato: {<(0, 0), 1>, <(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>} OK!
+[Test #1] 		Ora creo una copia indipendente dei dati utilizzando il cctor... OK!
+[Test #1] 		Stampo il multiset appena creato... Risultato: {<(0, 0), 1>, <(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>} OK!
+[Test #1] 		Controllo con l'operator== i due multiset... Risultato: true OK!
+[Test #1] 		Chiamo la clear sul primo multiset e poi lo stampo... Risultato: {} OK!
+[Test #1] 		Stampo il secondo multiset verificando l'indipendenza dei dati... Risultato: {<(0, 0), 1>, <(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>} OK!
+[Test #1] 	Fine copy constructor
+
+[Test #1] 	Inizio operatore di assegnamento
+[Test #1] 		Utilizzo l'operator= per assegnare al primo multiset un multiset vuoto creato al volo... OK!
+[Test #1] 		Utilizzo l'operator= per assegnare al primo multiset i dati del secondo... OK!
+[Test #1] 		Utilizzo l'operator= per assegnare al primo multiset se' stesso (auto-assegnamento)... OK!
+[Test #1] 		Stampo il primo multiset... Risultato: {<(0, 0), 1>, <(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>} OK!
+[Test #1] 		Rimuovo l'unica occorrenza dell'elemento (0, 0) dal secondo multiset per poi verificare l'indipendenza... OK!
+[Test #1] 		Stampo il primo multiset... Risultato: {<(0, 0), 1>, <(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>} OK!
+[Test #1] 		Stampo il secondo multiset... Risultato: {<(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>} OK!
+[Test #1] 		Rimuovo un'occorrenza dell'elemento (1, 2) dal primo multiset per poi verificare l'indipendenza... OK!
+[Test #1] 		Stampo il primo multiset... Risultato: {<(0, 0), 1>, <(-1, -2), 1>, <(1, 2), 1>, <(-5, -10), 1>} OK!
+[Test #1] 		Stampo il secondo multiset... Risultato: {<(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>} OK!
+[Test #1] 	Fine operatore di assegnamento
+[Test #1] 	Fine metodi fondamentali
+
+[Test #1] 	Inizio test interfaccia pubblica
+[Test #1] 	Inizio costruttore che prende una coppia di iteratori
+[Test #1] 		Gli elementi che saranno aggiunti sono (0, 0) (1, 2) (-5, -10) 
+[Test #1] 		Creazione multiset usando due iteratori... Risultato: {<(0, 0), 1>, <(1, 2), 1>, <(-5, -10), 1>} OK!
+[Test #1] 		Creazione multiset usando due iteratori uguali, quindi che risultera' vuoto... Risultato: {} OK!
+[Test #1] 	Fine costruttore che prende una coppia di iteratori
+
+[Test #1] 	Inizio metodo clear
+[Test #1] 		Utilizzo la clear su un multiset non vuoto, ossia quello costruito con due iteratori
+[Test #1] 		Prima della clear: {<(0, 0), 1>, <(1, 2), 1>, <(-5, -10), 1>}
+[Test #1] 		Dopo la clear: {} OK!
+[Test #1] 		Utilizzo la clear su un multiset vuoto, ossia quello costruito con due iteratori uguali
+[Test #1] 		Prima della clear: {}
+[Test #1] 		Dopo la clear: {} OK!
+[Test #1] 	Fine metodo clear
+
+[Test #1] 	Inizio metodo swap
+[Test #1] 		Riutilizzo due multiset creati in precedenza qui sotto stampati:
+[Test #1] 		Primo multiset: {<(0, 0), 1>, <(-1, -2), 1>, <(1, 2), 1>, <(-5, -10), 1>}
+[Test #1] 		Secondo multiset: {<(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>}
+[Test #1] 		Chiamo la swap... OK!
+[Test #1] 		Controllo che i due contenuti siano stati scambiati... OK!
+[Test #1] 		Stampo i due multiset dopo la swap qui sotto:
+[Test #1] 		Primo multiset: {<(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>}
+[Test #1] 		Secondo multiset: {<(0, 0), 1>, <(-1, -2), 1>, <(1, 2), 1>, <(-5, -10), 1>}
+[Test #1] 		Ora scambio il primo multiset con un multiset vuoto creato in precedenza... OK!
+[Test #1] 		Stampo qui sotto i due multiset:
+[Test #1] 		Multiset che era vuoto: {<(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>}
+[Test #1] 		Multiset che era riempito: {}
+[Test #1] 		Li riporto allo stato originale con un'altra swap... OK!
+[Test #1] 		Multiset di nuovo vuoto: {}
+[Test #1] 		Multiset di nuovo riempito: {<(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>}
+[Test #1] 		Infine scambio due multiset vuoti tra di loro e li stampo... {} {} OK!
+[Test #1] 	Fine metodo swap
+
+[Test #1] 	Inizio metodo size
+[Test #1] 		Chiamo la size su un multiset vuoto, mi aspetto 0... Risultato: 0 OK!
+[Test #1] 		Chiamo la size sul multiset utilizzato in precedenza che stampo qui sotto:
+[Test #1] 		Multiset: {<(-1, -2), 1>, <(1, 2), 2>, <(-5, -10), 1>}
+[Test #1] 		Mi aspetto 4... Risultato: 4 OK!
+[Test #1] 		Aggiungo l'elemento (1, 1) e verifico che la size venga incrementata, mi aspetto 5... Risultato: 5 OK!
+[Test #1] 		Rimuovo l'elemento appena aggiunto e verifico che la size venga decrementata, mi aspetto 4... Risultato: 4 OK!
+[Test #1] 	Fine metodo size
+
+[Test #1] 	Inizio metodo add
+[Test #1] 		Utilizzo un multiset vuoto: {}
+[Test #1] 		Aggiungo 6 volte l'elemento (0, 0)... OK!
+[Test #1] 		Verifico la correttezza del contenuto, mi aspetto {<(0, 0), 6>}... Risultato: {<(0, 0), 6>} OK!
+[Test #1] 		Aggiungo altri elementi:
+[Test #1] 			Aggiungo l'elemento (1, 2)... OK!
+[Test #1] 			Aggiungo l'elemento (-1, -2)... OK!
+[Test #1] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #1] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #1] 		{<(0, 0), 6>, <(-1, -2), 1>, <(1, 2), 1>} OK!
+[Test #1] 	Fine metodo add
+
+[Test #1] 	Inizio metodo remove
+[Test #1] 		Utilizzo lo stesso multiset di prima, rimuovo 5 occorrenze di (0, 0)... OK!
+[Test #1] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #1] 		{<(0, 0), 1>, <(-1, -2), 1>, <(1, 2), 1>} OK!
+[Test #1] 		Verifico che ci sia una sola occorrenza di (0, 0)... Risultato: true OK!
+[Test #1] 		Elimino l'ultima occorrenza di (0, 0)... OK!
+[Test #1] 		Stampo il nuovo contenuto qui sotto:
+[Test #1] 		{<(-1, -2), 1>, <(1, 2), 1>} OK!
+[Test #1] 		(Mi aspetto l'eccezione custom) Provo ad eliminare l'elemento (1, 1) non presente:
+[Test #1] 		Eccezione custom catturata: Impossibile rimuovere un elemento non presente nel multiset ordinato.
+[Test #1] 	Fine metodo remove
+
+[Test #1] 	Inizio metodo multiplicity
+[Test #1] 		Uso l'ultimo multiset utilizzato, controllo che per ogni elemento il metodo multiplicity restituisca il numero di occorrenze corretto:
+[Test #1] 			Molteplicita' dell'elemento (1, 2) aspettata 1, ho 1 OK!
+[Test #1] 			Molteplicita' dell'elemento (-1, -2) aspettata 1, ho 1 OK!
+[Test #1] 		Molteplicita' dell'elemento (0, 0) non presente... Risultato: 0 OK!
+[Test #1] 	Fine metodo multiplicity
+
+[Test #1] 	Inizio operator==
+[Test #1] 		A partire dall'ultimo multiset utilizzato creo un altro multiset ma con policy di ordinamento diversa:
+[Test #1] 			Stampo il multiset che vado ad utilizzare:
+[Test #1] 			{<(-1, -2), 1>, <(1, 2), 1>} OK!
+[Test #1] 			Creo un nuovo multiset con ordinamento diverso, utilizzando il costruttore che prende due iteratori... OK!
+[Test #1] 		Nuovo multiset con ordinamento diverso creato, lo stampo qui sotto:
+[Test #1] 		{<(1, 2), 1>, <(-1, -2), 1>}
+[Test #1] 		Utilizzo l'operator== tra i due multiset ordinati in modo diverso... Risultato: true OK!
+[Test #1] 		Aggiungo l'elemento (0, 0) al nuovo multiset e verifico che siano diversi... OK!
+[Test #1] 		Stampo il nuovo multiset qui sotto:
+[Test #1] 		{<(1, 2), 1>, <(-1, -2), 1>, <(0, 0), 1>}
+[Test #1] 		Svuoto quest'ultimo con la clear... OK!
+[Test #1] 		Stampo il multiset... Risultato: {} OK!
+[Test #1] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento uguale... Risultato: true OK!
+[Test #1] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento diverso... Risultato: true OK!
+[Test #1] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento uguale... Risultato: true OK!
+[Test #1] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento diverso... Risultato: true OK!
+[Test #1] 	Fine operator==
+
+[Test #1] 	Inizio metodo contains
+[Test #1] 		Creo un nuovo multiset con i seguenti valori: (0, 1) (1, 0) (5, 4) (6, 2) 
+[Test #1] 		Stampo il nuovo contenuto qui sotto:
+[Test #1] 		{<(1, 0), 1>, <(0, 1), 1>, <(6, 2), 1>, <(5, 4), 1>} OK!
+[Test #1] 		Controllo che la contains dia true per ogni elemento distinto del multiset:
+[Test #1] 			Contains dell'elemento (0, 1)... Risultato: true OK!
+[Test #1] 			Contains dell'elemento (1, 0)... Risultato: true OK!
+[Test #1] 			Contains dell'elemento (6, 2)... Risultato: true OK!
+[Test #1] 			Contains dell'elemento (5, 4)... Risultato: true OK!
+[Test #1] 		Controllo che la contains dia false per un elemento non contenuto:
+[Test #1] 			Contains dell'elemento (1, 1)... Risultato: false OK!
+[Test #1] 	Fine metodo contains
+
+[Test #1] 	Inizio stampa con iteratori
+[Test #1] 		Uso l'ultimo multiset utilizzato, stampo gli elementi in ordine del multiset ordinato tramite gli iteratori:
+[Test #1] 		(1, 0) (0, 1) (6, 2) (5, 4)  OK!
+[Test #1] 		Ora di nuovo ma stampo partendo dalla fine, per utilizzare il decremento nell'iteratore bidirectional:
+[Test #1] 		(5, 4) (6, 2) (0, 1) (1, 0)  OK!
+[Test #1] 		Controllo che gli elementi restituiti dall'iteratore costituiscono una permutazione degli elementi inseriti in precedenza... Risultato: true OK!
+[Test #1] 		Stampo con gli iteratori un multiset vuoto:
+[Test #1] 		 OK!
+[Test #1] 	Fine stampa con iteratori
+
+[Test #1] 	Fine interfaccia pubblica
+
+[Test #1] 	Inizio const correctness
+[Test #1] 	Metodi utilizzabili (da parte dell'utente o meno, come il distruttore) su un ordered_multiset costante:
+[Test #1] 		Ctor di default... OK!
+[Test #1] 		Costruttore che prende una coppia di iteratori... OK!
+[Test #1] 		Distruttore... OK!
+[Test #1] 		Copy constructor... OK!
+[Test #1] 		Size... OK!
+[Test #1] 		Multiplicity... OK!
+[Test #1] 		Operatore di uguaglianza operator==... OK!
+[Test #1] 		Contains... OK!
+[Test #1] 		Begin... OK!
+[Test #1] 		End... OK!
+[Test #1] 		Operatore di stream operator<<... {<(1, 0), 1>, <(0, 1), 1>, <(6, 2), 1>, <(5, 4), 1>} OK!
+[Test #1] 	Fine metodi utilizzabili per multiset costanti
+
+[Test #1] 	I metodi non utilizzabili dell'interfaccia pubblica per multiset costanti sono:
+[Test #1] 	operator=, clear, swap, add, remove.
+[Test #1] 	Fine const correctness
+
+[Test #1] Fine test 1
+
+[Test #2] Test 2: x^2 + y^2 in ordine decrescente
+
+[Test #2] 	Metodi fondamentali
+[Test #2] 	Inizio costruttore di default
+[Test #2] 		Controllo della size uguale a 0... Risultato: 0 OK!
+[Test #2] 		Controllo che non sia contenuto nemmeno l'elemento (0, 0)... Risultato: true OK!
+[Test #2] 		Controllo l'operator== con un altro multiset vuoto dello stesso tipo... Risultato: true OK!
+[Test #2] 		Stampo il contenuto vuoto... Risultato: {} OK!
+[Test #2] 	Fine costruttore di default
+
+[Test #2] 	Inizio distruttore
+[Test #2] 		Creazione oggetto allocato sullo heap e puntatore... OK!
+[Test #2] 		Eseguo una delete... OK!
+[Test #2] 	Fine distruttore
+
+[Test #2] 	Inizio copy constructor
+[Test #2] 		Inizialmente aggiungo qualche elemento al primo multiset creato col ctor di default:
+[Test #2] 			Aggiungo l'elemento (8, 2)... OK!
+[Test #2] 			Aggiungo l'elemento (2, 1)... OK!
+[Test #2] 			Aggiungo l'elemento (-2, -1)... OK!
+[Test #2] 			Aggiungo l'elemento (1, 2)... OK!
+[Test #2] 			Aggiungo l'elemento (4, 3)... OK!
+[Test #2] 			Aggiungo l'elemento (7, 1)... OK!
+[Test #2] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #2] 		Stampo il nuovo contenuto del multiset... Risultato: {<(8, 2), 1>, <(7, 1), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>} OK!
+[Test #2] 		Ora creo una copia indipendente dei dati utilizzando il cctor... OK!
+[Test #2] 		Stampo il multiset appena creato... Risultato: {<(8, 2), 1>, <(7, 1), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>} OK!
+[Test #2] 		Controllo con l'operator== i due multiset... Risultato: true OK!
+[Test #2] 		Chiamo la clear sul primo multiset e poi lo stampo... Risultato: {} OK!
+[Test #2] 		Stampo il secondo multiset verificando l'indipendenza dei dati... Risultato: {<(8, 2), 1>, <(7, 1), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>} OK!
+[Test #2] 	Fine copy constructor
+
+[Test #2] 	Inizio operatore di assegnamento
+[Test #2] 		Utilizzo l'operator= per assegnare al primo multiset un multiset vuoto creato al volo... OK!
+[Test #2] 		Utilizzo l'operator= per assegnare al primo multiset i dati del secondo... OK!
+[Test #2] 		Utilizzo l'operator= per assegnare al primo multiset se' stesso (auto-assegnamento)... OK!
+[Test #2] 		Stampo il primo multiset... Risultato: {<(8, 2), 1>, <(7, 1), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>} OK!
+[Test #2] 		Rimuovo l'unica occorrenza dell'elemento (7, 1) dal secondo multiset per poi verificare l'indipendenza... OK!
+[Test #2] 		Stampo il primo multiset... Risultato: {<(8, 2), 1>, <(7, 1), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>} OK!
+[Test #2] 		Stampo il secondo multiset... Risultato: {<(8, 2), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>} OK!
+[Test #2] 		Rimuovo un'occorrenza dell'elemento (2, 1) dal primo multiset per poi verificare l'indipendenza... OK!
+[Test #2] 		Stampo il primo multiset... Risultato: {<(8, 2), 1>, <(7, 1), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>} OK!
+[Test #2] 		Stampo il secondo multiset... Risultato: {<(8, 2), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>} OK!
+[Test #2] 	Fine operatore di assegnamento
+[Test #2] 	Fine metodi fondamentali
+
+[Test #2] 	Inizio test interfaccia pubblica
+[Test #2] 	Inizio costruttore che prende una coppia di iteratori
+[Test #2] 		Gli elementi che saranno aggiunti sono (8, 2) (-2, -1) (4, 3) 
+[Test #2] 		Creazione multiset usando due iteratori... Risultato: {<(8, 2), 1>, <(4, 3), 1>, <(-2, -1), 1>} OK!
+[Test #2] 		Creazione multiset usando due iteratori uguali, quindi che risultera' vuoto... Risultato: {} OK!
+[Test #2] 	Fine costruttore che prende una coppia di iteratori
+
+[Test #2] 	Inizio metodo clear
+[Test #2] 		Utilizzo la clear su un multiset non vuoto, ossia quello costruito con due iteratori
+[Test #2] 		Prima della clear: {<(8, 2), 1>, <(4, 3), 1>, <(-2, -1), 1>}
+[Test #2] 		Dopo la clear: {} OK!
+[Test #2] 		Utilizzo la clear su un multiset vuoto, ossia quello costruito con due iteratori uguali
+[Test #2] 		Prima della clear: {}
+[Test #2] 		Dopo la clear: {} OK!
+[Test #2] 	Fine metodo clear
+
+[Test #2] 	Inizio metodo swap
+[Test #2] 		Riutilizzo due multiset creati in precedenza qui sotto stampati:
+[Test #2] 		Primo multiset: {<(8, 2), 1>, <(7, 1), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>}
+[Test #2] 		Secondo multiset: {<(8, 2), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>}
+[Test #2] 		Chiamo la swap... OK!
+[Test #2] 		Controllo che i due contenuti siano stati scambiati... OK!
+[Test #2] 		Stampo i due multiset dopo la swap qui sotto:
+[Test #2] 		Primo multiset: {<(8, 2), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>}
+[Test #2] 		Secondo multiset: {<(8, 2), 1>, <(7, 1), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>}
+[Test #2] 		Ora scambio il primo multiset con un multiset vuoto creato in precedenza... OK!
+[Test #2] 		Stampo qui sotto i due multiset:
+[Test #2] 		Multiset che era vuoto: {<(8, 2), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>}
+[Test #2] 		Multiset che era riempito: {}
+[Test #2] 		Li riporto allo stato originale con un'altra swap... OK!
+[Test #2] 		Multiset di nuovo vuoto: {}
+[Test #2] 		Multiset di nuovo riempito: {<(8, 2), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>}
+[Test #2] 		Infine scambio due multiset vuoti tra di loro e li stampo... {} {} OK!
+[Test #2] 	Fine metodo swap
+
+[Test #2] 	Inizio metodo size
+[Test #2] 		Chiamo la size su un multiset vuoto, mi aspetto 0... Risultato: 0 OK!
+[Test #2] 		Chiamo la size sul multiset utilizzato in precedenza che stampo qui sotto:
+[Test #2] 		Multiset: {<(8, 2), 1>, <(4, 3), 1>, <(1, 2), 1>, <(-2, -1), 1>, <(2, 1), 1>}
+[Test #2] 		Mi aspetto 5... Risultato: 5 OK!
+[Test #2] 		Aggiungo l'elemento (0, 0) e verifico che la size venga incrementata, mi aspetto 6... Risultato: 6 OK!
+[Test #2] 		Rimuovo l'elemento appena aggiunto e verifico che la size venga decrementata, mi aspetto 5... Risultato: 5 OK!
+[Test #2] 	Fine metodo size
+
+[Test #2] 	Inizio metodo add
+[Test #2] 		Utilizzo un multiset vuoto: {}
+[Test #2] 		Aggiungo 9 volte l'elemento (0, 0)... OK!
+[Test #2] 		Verifico la correttezza del contenuto, mi aspetto {<(0, 0), 9>}... Risultato: {<(0, 0), 9>} OK!
+[Test #2] 		Aggiungo altri elementi:
+[Test #2] 			Aggiungo l'elemento (2, 1)... OK!
+[Test #2] 			Aggiungo l'elemento (1, 2)... OK!
+[Test #2] 			Aggiungo l'elemento (7, 1)... OK!
+[Test #2] 		Controllo che gli elementi siano stati inseriti nell'ordine corretto... Risultato: true OK!
+[Test #2] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #2] 		{<(7, 1), 1>, <(1, 2), 1>, <(2, 1), 1>, <(0, 0), 9>} OK!
+[Test #2] 	Fine metodo add
+
+[Test #2] 	Inizio metodo remove
+[Test #2] 		Utilizzo lo stesso multiset di prima, rimuovo 8 occorrenze di (0, 0)... OK!
+[Test #2] 		Stampo il nuovo contenuto del multiset qui sotto:
+[Test #2] 		{<(7, 1), 1>, <(1, 2), 1>, <(2, 1), 1>, <(0, 0), 1>} OK!
+[Test #2] 		Verifico che ci sia una sola occorrenza di (0, 0)... Risultato: true OK!
+[Test #2] 		Elimino l'ultima occorrenza di (0, 0)... OK!
+[Test #2] 		Stampo il nuovo contenuto qui sotto:
+[Test #2] 		{<(7, 1), 1>, <(1, 2), 1>, <(2, 1), 1>} OK!
+[Test #2] 		(Mi aspetto l'eccezione custom) Provo ad eliminare l'elemento (0, 0) non presente:
+[Test #2] 		Eccezione custom catturata: Impossibile rimuovere un elemento non presente nel multiset ordinato.
+[Test #2] 	Fine metodo remove
+
+[Test #2] 	Inizio metodo multiplicity
+[Test #2] 		Uso l'ultimo multiset utilizzato, controllo che per ogni elemento il metodo multiplicity restituisca il numero di occorrenze corretto:
+[Test #2] 			Molteplicita' dell'elemento (7, 1) aspettata 1, ho 1 OK!
+[Test #2] 			Molteplicita' dell'elemento (2, 1) aspettata 1, ho 1 OK!
+[Test #2] 			Molteplicita' dell'elemento (1, 2) aspettata 1, ho 1 OK!
+[Test #2] 		Molteplicita' dell'elemento (0, 0) non presente... Risultato: 0 OK!
+[Test #2] 	Fine metodo multiplicity
+
+[Test #2] 	Inizio operator==
+[Test #2] 		A partire dall'ultimo multiset utilizzato creo un altro multiset ma con policy di ordinamento diversa:
+[Test #2] 			Stampo il multiset che vado ad utilizzare:
+[Test #2] 			{<(7, 1), 1>, <(1, 2), 1>, <(2, 1), 1>} OK!
+[Test #2] 			Creo un nuovo multiset con ordinamento diverso, utilizzando il costruttore che prende due iteratori... OK!
+[Test #2] 		Nuovo multiset con ordinamento diverso creato, lo stampo qui sotto:
+[Test #2] 		{<(2, 1), 1>, <(1, 2), 1>, <(7, 1), 1>}
+[Test #2] 		Utilizzo l'operator== tra i due multiset ordinati in modo diverso... Risultato: true OK!
+[Test #2] 		Aggiungo l'elemento (0, 0) al nuovo multiset e verifico che siano diversi... OK!
+[Test #2] 		Stampo il nuovo multiset qui sotto:
+[Test #2] 		{<(0, 0), 1>, <(2, 1), 1>, <(1, 2), 1>, <(7, 1), 1>}
+[Test #2] 		Svuoto quest'ultimo con la clear... OK!
+[Test #2] 		Stampo il multiset... Risultato: {} OK!
+[Test #2] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento uguale... Risultato: true OK!
+[Test #2] 		Verifico l'uguaglianza con un multiset vuoto di ordinamento diverso... Risultato: true OK!
+[Test #2] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento uguale... Risultato: true OK!
+[Test #2] 		Verifico l'uguaglianza tra due multiset vuoti di ordinamento diverso... Risultato: true OK!
+[Test #2] 	Fine operator==
+
+[Test #2] 	Inizio metodo contains
+[Test #2] 		Creo un nuovo multiset con i seguenti valori: (7, 2) (2, 4) (-2, -4) (1, 2) 
+[Test #2] 		Stampo il nuovo contenuto qui sotto:
+[Test #2] 		{<(7, 2), 1>, <(-2, -4), 1>, <(2, 4), 1>, <(1, 2), 1>} OK!
+[Test #2] 		Controllo che la contains dia true per ogni elemento distinto del multiset:
+[Test #2] 			Contains dell'elemento (7, 2)... Risultato: true OK!
+[Test #2] 			Contains dell'elemento (2, 4)... Risultato: true OK!
+[Test #2] 			Contains dell'elemento (-2, -4)... Risultato: true OK!
+[Test #2] 			Contains dell'elemento (1, 2)... Risultato: true OK!
+[Test #2] 		Controllo che la contains dia false per un elemento non contenuto:
+[Test #2] 			Contains dell'elemento (0, 0)... Risultato: false OK!
+[Test #2] 	Fine metodo contains
+
+[Test #2] 	Inizio stampa con iteratori
+[Test #2] 		Uso l'ultimo multiset utilizzato, stampo gli elementi in ordine del multiset ordinato tramite gli iteratori:
+[Test #2] 		(7, 2) (-2, -4) (2, 4) (1, 2)  OK!
+[Test #2] 		Ora di nuovo ma stampo partendo dalla fine, per utilizzare il decremento nell'iteratore bidirectional:
+[Test #2] 		(1, 2) (2, 4) (-2, -4) (7, 2)  OK!
+[Test #2] 		Controllo che gli elementi restituiti dall'iteratore costituiscono una permutazione degli elementi inseriti in precedenza... Risultato: true OK!
+[Test #2] 		Stampo con gli iteratori un multiset vuoto:
+[Test #2] 		 OK!
+[Test #2] 	Fine stampa con iteratori
+
+[Test #2] 	Fine interfaccia pubblica
+
+[Test #2] 	Inizio const correctness
+[Test #2] 	Metodi utilizzabili (da parte dell'utente o meno, come il distruttore) su un ordered_multiset costante:
+[Test #2] 		Ctor di default... OK!
+[Test #2] 		Costruttore che prende una coppia di iteratori... OK!
+[Test #2] 		Distruttore... OK!
+[Test #2] 		Copy constructor... OK!
+[Test #2] 		Size... OK!
+[Test #2] 		Multiplicity... OK!
+[Test #2] 		Operatore di uguaglianza operator==... OK!
+[Test #2] 		Contains... OK!
+[Test #2] 		Begin... OK!
+[Test #2] 		End... OK!
+[Test #2] 		Operatore di stream operator<<... {<(7, 2), 1>, <(-2, -4), 1>, <(2, 4), 1>, <(1, 2), 1>} OK!
+[Test #2] 	Fine metodi utilizzabili per multiset costanti
+
+[Test #2] 	I metodi non utilizzabili dell'interfaccia pubblica per multiset costanti sono:
+[Test #2] 	operator=, clear, swap, add, remove.
+[Test #2] 	Fine const correctness
+
+[Test #2] Fine test 2
+
+[Test #2] Fine unit test per il tipo CUSTOM point
+
